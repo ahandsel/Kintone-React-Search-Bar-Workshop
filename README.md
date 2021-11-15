@@ -41,8 +41,8 @@ cd Kintone_React_Search_Bar
 ```
 
 ... !FIX!
-* [] File overview
-* [] Setup instructions
+  * [] File overview
+  * [] Setup instructions
 
 ### ⚡ Notes ⚡
 
@@ -58,7 +58,7 @@ cd Kintone_React_Search_Bar
 
 ## Kintone Web Database & Credentials
 
-_Built for teamwork, designed by you_
+_Built for teamwork, designed by you_ <!-- markdownlint-disable MD036 --> <!-- markdownlint-enable MD036 -->
 
 ### 🚀 Getting your FREE Kintone Database
 
@@ -123,9 +123,9 @@ Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://
 ## Using @kintone/customize-uploader
 
 ### Update `dest/customize-manifest.json`
-* Replace `180` with your App ID in `dest/customize-manifest.json`
-* To determine your Kintone App ID: Go inside the App, copy the URL, and extract the digits after `https://YOUR_SUBDOMAIN.kintone.com/k/`
-* Example: `https://YOUR_SUBDOMAIN.kintone.com/k/1/` -> App ID is `1`
+  * Replace `180` with your App ID in `dest/customize-manifest.json`
+  * To determine your Kintone App ID: Go inside the App, copy the URL, and extract the digits after `https://YOUR_SUBDOMAIN.kintone.com/k/`
+  * Example: `https://YOUR_SUBDOMAIN.kintone.com/k/1/` -> App ID is `1`
 
 ### - Login Methods
 
