@@ -165,21 +165,43 @@ Environment variables for the Kintone subdomain and login information can be set
 
 Set environment variables with Kintone information in advance by entering the following command in your PowerShell:
 
-```PowerShell
-set-item "env:KINTONE_BASE_URL" <subdomain>.kintone.com
-set-item "env:KINTONE_USERNAME" <user name>
-set-item "env:KINTONE_PASSWORD" <user password>
-```
+  ```PowerShell
+  set-item "env:KINTONE_BASE_URL" <subdomain>.kintone.com
+  set-item "env:KINTONE_USERNAME" <user name>
+  set-item "env:KINTONE_PASSWORD" <user password>
+  ```
+
+Verify that the environment variables were set correctly
+
+  ```PowerShell
+   # View all the environment variables
+   $env:path -split ";"
+
+   # View environment variables in current directory
+   Get-Item .
+  ```
 
 #### For Mac/ [Terminal](https://support.apple.com/guide/terminal/welcome/mac)
 
 Set environment variables with Kintone information in advance by entering the following command in your Terminal:
 
-```sh
-$ export KINTONE_BASE_URL=<subdomain>.kintone.com
-$ export KINTONE_USERNAME=<user name>
-$ export KINTONE_PASSWORD=<user password>
-```
+  ```sh
+  export KINTONE_BASE_URL=<subdomain>.kintone.com
+
+  export KINTONE_USERNAME=<user name>
+
+  export KINTONE_PASSWORD=<user password>
+  ```
+
+Verify that the environment variables were set correctly
+
+  ```sh
+  echo $KINTONE_BASE_URL
+
+  echo $KINTONE_USERNAME
+
+  echo $KINTONE_PASSWORD
+  ```
 
 ---
 
@@ -192,10 +214,10 @@ $ export KINTONE_PASSWORD=<user password>
    * To directly implement the Kintone customization, upload `./dist/KintoneCustomization.js` to Kintone App directly.
    * For more details, refer to [Customizing an App with JavaScript and CSS](https://get.kintone.help/k/en/user/app_settings/js_customize.html)
 
-4.  Run `npm run start`
-    * This will trigger webpack & kintone-customize-uploader to run while watching `./src/index.js` for changes
-    * Input Kintone credentials when asked
-5.  Refresh the Kintone App to see the changes!
+4. Run `npm run start`
+   * This will trigger webpack & kintone-customize-uploader to run while watching `./src/index.js` for changes
+   * Input Kintone credentials when asked
+5. Refresh the Kintone App to see the changes!
 
 Good luck coding!
 
@@ -232,3 +254,4 @@ Check out our [Sign up for Kintone Developer Program & Developer License](https:
   * [@kintone/customize-uploader | kintone/js-sdk | GitHub](https://github.com/kintone/js-sdk/tree/master/packages/customize-uploader)
   * [Simple search form in REACT using hooks 🔎 | by asimdahall | dev.to](https://dev.to/asimdahall/simple-search-form-in-react-using-hooks-42pg)
   * [dmalvia/React_Tutorial_Contact_Manager_App | GitHub](https://github.com/dmalvia/React_Tutorial_Contact_Manager_App)
+  * [Setting up Environment Variables in MacOS Sierra | by Himanshu Aggarwal | Medium](https://medium.com/@himanshuagarwal1395/setting-up-environment-variables-in-macos-sierra-f5978369b255)
