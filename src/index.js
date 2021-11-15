@@ -10,7 +10,7 @@ import './index.css';
 
   const customViewID = 5527024; // Replace with your Custom View's ID
 
-  // Current DateTime for confirming script version
+  // Confirming script version
   const scriptVer = 2;
   console.log(`\nScript version: ${scriptVer}\n\n`);
 
@@ -22,8 +22,7 @@ import './index.css';
 
     // const appID = kintone.app.getId();
 
-    // const dataSet = [ 'Siri', 'Alexa', 'Google', 'Facebook', 'Twitter', 'LinkedIn'];
-    // Get Kintone data in insert into dataSet!
+    const people = [ 'Siri', 'Alexa', 'Google', 'Facebook', 'Twitter', 'LinkedIn'];
 
     function App() {
       const [searchTerm, setSearchTerm] = React.useState("");
@@ -32,7 +31,7 @@ import './index.css';
         setSearchTerm(e.target.value);
       };
       React.useEffect(() => {
-        const results = dataSet.filter(person =>
+        const results = people.filter(person =>
           person.toLowerCase().includes(searchTerm)
         );
         setSearchResults(results);
