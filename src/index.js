@@ -1,15 +1,18 @@
+// Original code is by asimdahall
+// https://dev.to/asimdahall/simple-search-form-in-react-using-hooks-42pg
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// Original code is by asimdahall
-// https://dev.to/asimdahall/simple-search-form-in-react-using-hooks-42pg
-
 (function () {
   'use strict';
+
   const customViewID = 5527024; // Replace with your Custom View's ID
 
-  console.log('Script has been loaded!');
+  // Current DateTime for confirming script version
+  const today = new Date();
+  console.log(`\nScript loaded at ${today}!\n\n`);
 
   kintone.events.on('app.record.index.show', function (event) {
     if (event.viewId !== customViewID) {
@@ -19,16 +22,7 @@ import './index.css';
 
     // const appID = kintone.app.getId();
 
-    const people = [
-      "Siri",
-      "Alexa",
-      "Google",
-      "Facebook",
-      "Twitter",
-      "Linkedin",
-      "OMG",
-      "Nice"
-    ];
+    const people = [ 'Siri', 'Alexa', 'Google', 'Facebook', 'Twitter', 'LinkedIn'];
 
     function App() {
       const [searchTerm, setSearchTerm] = React.useState("");
