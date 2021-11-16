@@ -24,7 +24,7 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
   * [`npm install` command is not working](#npm-install-command-is-not-working)
   * [@kintone/customize-uploader not working?](#kintonecustomize-uploader-not-working)
   * [How do I get my Kintone Subdomain?](#how-do-i-get-my-kintone-subdomain)
-* [References](#references)
+* [Appendix](#appendix)
 
 <!-- markdownlint-enable MD007 -->
 
@@ -246,12 +246,6 @@ Check out our [Sign up for Kintone Developer Program & Developer License](https:
 
   * [![https://youtu.be/Gzz8SbTuoFg](https://img.youtube.com/vi/Gzz8SbTuoFg/mq1.jpg)](https://youtu.be/Gzz8SbTuoFg)
 
-## References
-
-  * [Setup react with webpack and babel | by Prateek Srivastava | Medium](https://medium.com/age-of-awareness/setup-react-with-webpack-and-babel-5114a14a47e9)
-  * [webpack を利用する kintone カスタマイズ開発の流れ | by @yamaryu0508 | Qiita](https://qiita.com/yamaryu0508/items/1abbef9a50e1e7fc3d2f)
-  * [Introduction to customize-uploader | Kintone Developer Program](https://developer.kintone.io/hc/en-us/articles/360017405154)
-  * [@kintone/customize-uploader | kintone/js-sdk | GitHub](https://github.com/kintone/js-sdk/tree/master/packages/customize-uploader)
-  * [Simple search form in REACT using hooks 🔎 | by asimdahall | dev.to](https://dev.to/asimdahall/simple-search-form-in-react-using-hooks-42pg)
-  * [dmalvia/React_Tutorial_Contact_Manager_App | GitHub](https://github.com/dmalvia/React_Tutorial_Contact_Manager_App)
-  * [Setting up Environment Variables in MacOS Sierra | by Himanshu Aggarwal | Medium](https://medium.com/@himanshuagarwal1395/setting-up-environment-variables-in-macos-sierra-f5978369b255)
+## Appendix
+  * [Install_NodeJS_npm.md](docs/Install_NodeJS_npm.md)
+  * [References.md](docs/References.md)
