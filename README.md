@@ -32,12 +32,14 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 
 First, let's download the [ahandsel/Kintone_React_Search_Bar](https://github.com/ahandsel/Kintone_React_Search_Bar) Repo and go inside the folder.
 
-```bash
+```shell
 cd Downloads
 
 git clone https://github.com/ahandsel/Kintone_React_Search_Bar
 
 cd Kintone_React_Search_Bar
+
+npm install
 ```
 
 ... !FIX!
@@ -110,7 +112,7 @@ Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://
 
 ## Install the dependencies
 
-   ```bash
+   ```shell
    cd Kintone_React_Search_Bar
 
    npm install
@@ -138,7 +140,7 @@ Executing only the `npm run start` command will prompt a interactive login dialo
 
 Login dialog:  
 
-```console
+```text
 ? Input your kintone's base URL (https://example.cybozu.com): {kintoneBaseUrl}
 ? Input your username: {userLoginName}
 ? Input your password: [input is hidden] {yourPassword}
@@ -152,7 +154,7 @@ Example:
 Success Message:  
 *If you see the following message, you logged successfully!*
 
-```console
+```text
 Generate customize-manifest.json from kintone app customize
 Download Uploaded files on kintone app customize
 Finish importing from kintone app customize
@@ -185,7 +187,7 @@ Verify that the environment variables were set correctly
 
 Set environment variables with Kintone information in advance by entering the following command in your Terminal:
 
-  ```sh
+  ```shell
   export KINTONE_BASE_URL=<subdomain>.kintone.com
 
   export KINTONE_USERNAME=<user name>
@@ -195,7 +197,7 @@ Set environment variables with Kintone information in advance by entering the fo
 
 Verify that the environment variables were set correctly
 
-  ```sh
+  ```shell
   echo $KINTONE_BASE_URL
 
   echo $KINTONE_USERNAME
