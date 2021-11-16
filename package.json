@@ -7,7 +7,7 @@
     "start": "node scripts/npm-start.js",
     "upload": "env-cmd --verbose kintone-customize-uploader --watch dest/customize-manifest.json",
     "dev": "npm run build -- --watch",
-    "build": "webpack",
+    "build": "env-cmd --verbose webpack",
     "production": "webpack --mode production"
   },
   "keywords": [],
@@ -21,6 +21,7 @@
     "babel-loader": "^8.2.3",
     "core-js": "^3.19.1",
     "css-loader": "^6.5.1",
+    "dotenv-webpack": "^7.0.3",
     "env-cmd": "^10.1.0",
     "html-webpack-plugin": "^5.5.0",
     "npm-run-all": "^4.1.5",
