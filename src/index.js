@@ -13,22 +13,22 @@ import './index.css';
 (function () {
   'use strict';
 
-  const customViewID = 5527028; // Replace with your Custom View's ID
+  // Set Custom View's ID in .env
+  const customViewID = Number(process.env.VIEW_ID);
 
   // Increment to confirm script version on Kintone
-  const scriptVer = '2.2.0';
+  const scriptVer = '2.2.1';
   console.log(`\nScript version: ${scriptVer}\n\n`);
 
   kintone.events.on('app.record.index.show', function (event) {
     if (event.viewId !== customViewID) {
-
-      console.log(`\nCurrently not on the specified Custom View.\nConfirm the View ID on index.js Line 16\n\n`);
-
-      return event
+      console.log(`\nCurrently not on the specified Custom View.\nView ID is set to ${customViewID}.\n\n`);
+      return event;
     }
 
-    const appID = {
+    const body = {
       'app': kintone.app.getId(),
+      'query': 'query=order by Record_number asc'
     };
 
     // Get Kintone data in insert into dataSet!
@@ -40,10 +40,10 @@ import './index.css';
     // kintone.api(pathOrUrl, method, params, opt_callback, opt_errback)
     // pathOrUrl = kintone.api.url('/k/v1/records', true);
 
-    kintone.api(kintone.api.url('/k/v1/records', true), 'GET', appID,
+    kintone.api(kintone.api.url('/k/v1/records', true), 'GET', body,
       function (resp) {
-        // Successful API Call
 
+        // Successful API Call
         const records = resp.records;
         console.log('records');
         console.log(records);
@@ -53,7 +53,6 @@ import './index.css';
         console.log('dataSet');
         console.log(dataSet);
         console.log(typeof dataSet);
-
 
         // records.forEach(function (record) {
 
