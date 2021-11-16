@@ -1,55 +1,117 @@
-// Original code is by asimdahall
-// https://dev.to/asimdahall/simple-search-form-in-react-using-hooks-42pg
-
-import React from 'react';
+// Get started by importing the React JavaScript library & Hooks
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
+// Import the script to make GET API calls
+// import getRecords from './requests/getRecords.js';
+
+// Import the list & form components
+// import ListRecords from './components/ListRecords.js'
+// import InputForm from './components/InputForm.js'
 
 (function () {
   'use strict';
 
-  const customViewID = 5527024; // Replace with your Custom View's ID
+  const customViewID = 5527028; // Replace with your Custom View's ID
 
-  // Confirming script version
-  const scriptVer = 2;
+  // Increment to confirm script version on Kintone
+  const scriptVer = '2.2.0';
   console.log(`\nScript version: ${scriptVer}\n\n`);
 
   kintone.events.on('app.record.index.show', function (event) {
     if (event.viewId !== customViewID) {
-      console.log('Not on the Custom View');
+
+      console.log(`\nCurrently not on the specified Custom View.\nConfirm the View ID on index.js Line 16\n\n`);
+
       return event
     }
 
-    // const appID = kintone.app.getId();
+    const appID = {
+      'app': kintone.app.getId(),
+    };
 
-    const people = [ 'Siri', 'Alexa', 'Google', 'Facebook', 'Twitter', 'LinkedIn'];
+    // Get Kintone data in insert into dataSet!
+    // Default Field Codes: Record number = Record_number; Title = title; Alternative Title = alternative_title; Author = author
+
+    let dataSet = [];
+
+    // Kintone REST API Request
+    // kintone.api(pathOrUrl, method, params, opt_callback, opt_errback)
+    // pathOrUrl = kintone.api.url('/k/v1/records', true);
+
+    kintone.api(kintone.api.url('/k/v1/records', true), 'GET', appID,
+      function (resp) {
+        // Successful API Call
+
+        const records = resp.records;
+        console.log('records');
+        console.log(records);
+        console.log(typeof records);
+
+        dataSet = records;
+        console.log('dataSet');
+        console.log(dataSet);
+        console.log(typeof dataSet);
+
+
+        // records.forEach(function (record) {
+
+        //   if (allData.hasOwnProperty(record.Number.value)) {
+        //     allData[record.Number.value].push({
+        //       Manufacturer: record.Drop_down.value,
+        //       value: record.Number_0.value
+        //     });
+        //     return;
+        //   }
+
+        //   allData[record.Number.value] = [{
+        //     Manufacturer: record.Drop_down.value,
+        //     value: record.Number_0.value
+        //   }];
+
+        //   console.log(allData);
+        // });
+      },
+      function (error) {
+        // Error
+        console.log(error);
+      });
 
     function App() {
-      const [searchTerm, setSearchTerm] = React.useState("");
+
+      // Establish useState by giving it our initial state
+      // const [state, setState] = useState(initialState);
+      const [listItems, setListItems] = useState('*** now loading ***');
       const [searchResults, setSearchResults] = React.useState([]);
       const handleChange = e => {
-        setSearchTerm(e.target.value);
+        setListItems(e.target.value);
       };
+
+      // useEffect takes 2 arguments:
+      // 1st = a function, called effect, that is executed when the React Component is rendered
+      // 2nd = Array of dependencies to control when effect is to be executed after mounting the component; Empty array = only invoke effect once
+
       React.useEffect(() => {
-        const results = people.filter(person =>
-          person.toLowerCase().includes(searchTerm)
+        const results = dataSet.filter(dataSet =>
+          dataSet.toLowerCase().includes(listItems)
         );
         setSearchResults(results);
-      }, [searchTerm]);
-      return ( 
+      }, [listItems]);
+      return (
         <div className="App">
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={handleChange}
-        />
-        <ul>
-          {searchResults.map(item => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </div>
+          <input
+            type="text"
+            placeholder="Search"
+            value={listItems}
+            onChange={handleChange}
+          />
+          <ul>
+            {searchResults.map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
       );
     }
 
