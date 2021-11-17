@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node scripts/npm-start.js",
     "upload": "env-cmd --verbose kintone-customize-uploader --watch dest/customize-manifest.json",
+    "upload_manual": "kintone-customize-uploader --watch dest/customize-manifest.json",
     "dev": "npm run build -- --watch",
     "build": "env-cmd --verbose webpack",
     "production": "webpack --mode production"

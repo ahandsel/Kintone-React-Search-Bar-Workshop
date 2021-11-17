@@ -14,7 +14,7 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 * [Install the dependencies](#install-the-dependencies)
 * [Using @kintone/customize-uploader](#using-kintonecustomize-uploader)
   * [Update `dest/customize-manifest.json`](#update-destcustomize-manifestjson)
-  * [- Login Methods](#--login-methods)
+  * [Login Methods](#login-methods)
   * [Dialog Style Login Method](#dialog-style-login-method)
   * [Environment Variables Login Method](#environment-variables-login-method)
     * [For Windows/ PowerShell](#for-windows-powershell)
@@ -129,7 +129,7 @@ Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://
   * To determine your Kintone App ID: Go inside the App, copy the URL, and extract the digits after `https://YOUR_SUBDOMAIN.kintone.com/k/`
   * Example: `https://YOUR_SUBDOMAIN.kintone.com/k/1/` -> App ID is `1`
 
-### - Login Methods
+### Login Methods
 
 For more information on the Kintone Customize Uploader tool, refer to [Introduction to customize-uploader](https://developer.kintone.io/hc/en-us/articles/360017405154) article.
 
