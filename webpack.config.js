@@ -40,7 +40,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
     }),
-    new Dotenv()
+    new Dotenv({
+      safe: true, // load '.env.example' to verify the '.env' variables are all set. Can also be a string to a different file.
+    })
   ]
-
 };
