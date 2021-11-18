@@ -1,0 +1,16 @@
+{
+  "[js]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "TypeScript and JavaScript Language Features"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+  },
+  "cSpell.words": [
+    "destcustomize",
+    "kintonecustomize",
+    "manifestjson",
+    "nodenv",
+    "signup"
+  ]
+}

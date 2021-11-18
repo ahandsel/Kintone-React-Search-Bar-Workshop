@@ -1,61 +1,68 @@
-import React from 'react';
+// Get started by importing the React JavaScript library & Hooks
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+
+// Import CSS for styling
 import './index.css';
 
-// Original code is by asimdahall
-// https://dev.to/asimdahall/simple-search-form-in-react-using-hooks-42pg
+// Import the script to make GET API calls
+import getRecords from './getRecords.js';
+
+// Import the list & search bar components
+import ResultList from './components/ResultList.js'
+import SearchBar from './components/SearchBar.js'
 
 (function () {
   'use strict';
-  const customViewID = 5527024; // Replace with your Custom View's ID
 
-  console.log('Script has been loaded!');
+  // Increment to confirm script version on Kintone
+  const scriptVer = '1.0.0';
+  console.log(`\nScript version: ${scriptVer}\n\n`);
+
+  // Set Custom View's ID in .env
+  const customViewID = Number(process.env.VIEW_ID);
 
   kintone.events.on('app.record.index.show', function (event) {
     if (event.viewId !== customViewID) {
-      console.log('Not on the Custom View');
-      return event
+      console.log(`\nCurrently not on the specified Custom View.\nView ID is set to ${customViewID}.\n\n`);
+      return event;
     }
 
-    // const appID = kintone.app.getId();
-
-    const people = [
-      "Siri",
-      "Alexa",
-      "Google",
-      "Facebook",
-      "Twitter",
-      "Linkedin",
-      "OMG",
-      "Nice"
-    ];
-
     function App() {
-      const [searchTerm, setSearchTerm] = React.useState("");
-      const [searchResults, setSearchResults] = React.useState([]);
+
+      // Establish useState by giving it our initial state
+      // const [state, setState] = useState(initialState);
+
+      // listItems holds the initial API response
+      const [listItems, setListItems] = useState('*** now loading ***');
+      const [searchResults, setSearchResults] = useState([]);
+
       const handleChange = e => {
-        setSearchTerm(e.target.value);
+        let filterResults = listItems.filter(dataRecord => dataRecord.title.toLowerCase().includes(e.target.value.toLowerCase()));
+        console.log('filterResults');
+        console.log(filterResults);
+        setSearchResults(filterResults);
       };
-      React.useEffect(() => {
-        const results = people.filter(person =>
-          person.toLowerCase().includes(searchTerm)
+
+      // useEffect takes 2 arguments:
+      // 1st = a function, called effect, that is executed when the React Component is rendered
+      // 2nd = Array of dependencies to control when effect is to be executed after mounting the component; Empty array = only invoke effect once
+
+      useEffect(() => {
+        getRecords().then(
+          result => {
+            setListItems(result);
+            setSearchResults(result);
+          }
         );
-        setSearchResults(results);
-      }, [searchTerm]);
-      return ( 
-        <div className="App">
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={handleChange}
-        />
-        <ul>
-          {searchResults.map(item => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </div>
+      }, []);
+
+      return (
+        // JSX includes html-like syntax
+        <div className='App'>
+          <SearchBar handleChange={handleChange} />
+          <ResultList searchResults={searchResults} />
+        </div>
       );
     }
 
