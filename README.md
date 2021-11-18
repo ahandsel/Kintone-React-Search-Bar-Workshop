@@ -8,7 +8,6 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 * [Get Started](#get-started)
   * [⚡ Notes ⚡](#-notes-)
 * [Overview of the Repo](#overview-of-the-repo)
-* [| src/components/SearchBar.js   | Creates the search bar input                                                 | _Nope_                 |](#-srccomponentssearchbarjs----creates-the-search-bar-input--------------------------------------------------nope-----------------)
 * [Kintone Web Database & Credentials](#kintone-web-database--credentials)
   * [🚀 Getting your FREE Kintone Database](#-getting-your-free-kintone-database)
 * [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
@@ -76,6 +75,7 @@ npm install -g @kintone/customize-uploader
 |                                                              |                                                                              |                        |
 | [src/components/ResultList.js](src/components/ResultList.js) | Creates a list from the list items array                                     | _Nope_                 |
 | [src/components/SearchBar.js](src/components/SearchBar.js)   | Creates the search bar input                                                 | _Nope_                 |
+
 ---
 
 ## Kintone Web Database & Credentials
