@@ -5,5 +5,12 @@
   },
   "[markdown]": {
     "editor.formatOnSave": true,
-  }
+  },
+  "cSpell.words": [
+    "destcustomize",
+    "kintonecustomize",
+    "manifestjson",
+    "nodenv",
+    "signup"
+  ]
 }
