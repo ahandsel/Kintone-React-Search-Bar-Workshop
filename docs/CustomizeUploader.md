@@ -1,6 +1,6 @@
 # Using Kintone Customize Uploader
 
-## Overview <!-- omit in toc -->
+## Overview <!-- omit in toc --><!-- markdownlint-disable MD007 -->
 * [What is @kintone/customize-uploader ?](#what-is-kintonecustomize-uploader-)
 * [Setting Up for @kintone/customize-uploader](#setting-up-for-kintonecustomize-uploader)
   * [Part A: Update `dest/customize-manifest.json` with your App ID](#part-a-update-destcustomize-manifestjson-with-your-app-id)
@@ -11,6 +11,8 @@
   * [Manual Environment Variables Login Method](#manual-environment-variables-login-method)
     * [For Windows/ PowerShell](#for-windows-powershell)
     * [For Mac/ Terminal](#for-mac-terminal)
+
+<!-- markdownlint-enable MD007 -->
 
 ## What is @kintone/customize-uploader ?
 
