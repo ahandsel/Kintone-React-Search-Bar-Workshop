@@ -10,3 +10,7 @@ Here are links to articles and tutorials that was used to build this project.
   * [dmalvia/React_Tutorial_Contact_Manager_App | GitHub](https://github.com/dmalvia/React_Tutorial_Contact_Manager_App)
   * [Setting up Environment Variables in MacOS Sierra | by Himanshu Aggarwal | Medium](https://medium.com/@himanshuagarwal1395/setting-up-environment-variables-in-macos-sierra-f5978369b255)
   * [kintoneカスタマイズ開発におけるTypeScript導入の流れ - Qiita](https://qiita.com/yamaryu0508/items/e7276fd721cbd19b90ab)
+  * [React Icons](https://react-icons.github.io/react-icons)
+  * [How to build a search bar in React · Emma Goto](https://www.emgoto.com/react-search-bar/)
+  * [React & REST API Series' Articles - DEV Community 👩‍💻👨‍💻](https://dev.to/will_yama/series/11707)
+  * ["Regenerator Runtime is not defined" error when using async / await with Webpack + Babel-Notes that Kiriu doesn't read](https://note.kiriukun.com/entry/20200704-regeneratorRuntime-is-not-defined)
