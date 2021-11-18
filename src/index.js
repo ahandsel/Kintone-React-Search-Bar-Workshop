@@ -7,7 +7,7 @@ import './index.css';
 import getRecords from './getRecords.js';
 
 // Import the list & form components
-// import ListItems from './components/ListItems.js'
+import ResultList from './components/ResultList.js'
 // import InputForm from './components/InputForm.js'
 
 (function () {
@@ -62,11 +62,12 @@ import getRecords from './getRecords.js';
             placeholder="Search Manga Titles"
             onChange={handleChange}
           />
-          <ul>
+          {/* <ul>
             {searchResults.map(function (resultRecord, index) {
               return <li key={index}>{resultRecord.title} by {resultRecord.author}</li>;
             })}
-          </ul>
+          </ul> */}
+          <ResultList searchResults={searchResults} />
         </div>
       );
     }
