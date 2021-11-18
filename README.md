@@ -12,15 +12,9 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 * [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
   * [📺 How to Create a Kintone Database App | Video](#-how-to-create-a-kintone-database-app--video)
 * [Install the dependencies](#install-the-dependencies)
-* [Using @kintone/customize-uploader](#using-kintonecustomize-uploader)
-  * [Update `dest/customize-manifest.json`](#update-destcustomize-manifestjson)
-  * [Login Methods](#login-methods)
-  * [Dialog Style Login Method](#dialog-style-login-method)
-  * [Environment Variables Login Method](#environment-variables-login-method)
-    * [For Windows/ PowerShell](#for-windows-powershell)
-    * [For Mac/ Terminal](#for-mac-terminal)
 * [Build the customization](#build-the-customization)
 * [Debugging - Let's Fix Those Problems 💪](#debugging---lets-fix-those-problems-)
+  * [Errors related to .env](#errors-related-to-env)
   * [`npm install` command is not working](#npm-install-command-is-not-working)
   * [@kintone/customize-uploader not working?](#kintonecustomize-uploader-not-working)
   * [How do I get my Kintone Subdomain?](#how-do-i-get-my-kintone-subdomain)
@@ -122,91 +116,6 @@ Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://
 
 ---
 
-## Using @kintone/customize-uploader
-
-### Update `dest/customize-manifest.json`
-  * Replace `180` with your App ID in `dest/customize-manifest.json`
-  * To determine your Kintone App ID: Go inside the App, copy the URL, and extract the digits after `https://YOUR_SUBDOMAIN.kintone.com/k/`
-  * Example: `https://YOUR_SUBDOMAIN.kintone.com/k/1/` -> App ID is `1`
-
-### Login Methods
-
-For more information on the Kintone Customize Uploader tool, refer to [Introduction to customize-uploader](https://developer.kintone.io/hc/en-us/articles/360017405154) article.
-
-To view the source code, refer to [js-sdk/packages/customize-uploader at master · kintone/js-sdk](https://github.com/kintone/js-sdk/tree/master/packages/customize-uploader).
-
-### Dialog Style Login Method
-Executing only the `npm run start` command will prompt a interactive login dialog. Input the Kintone subdomain, username, and password individually.
-
-Login dialog:  
-
-```text
-? Input your kintone's base URL (https://example.cybozu.com): {kintoneBaseUrl}
-? Input your username: {userLoginName}
-? Input your password: [input is hidden] {yourPassword}
-```
-
-Example:  
-  * ? Input your kintone's base URL (<https://example.cybozu.com>): `https://cafe.kintone.com`
-  * ? Input your username: `Administrator`
-  * ? Input your password: [input is hidden] `KintoneIsAmazing!`
-
-Success Message:  
-*If you see the following message, you logged successfully!*
-
-```text
-Generate customize-manifest.json from kintone app customize
-Download Uploaded files on kintone app customize
-Finish importing from kintone app customize
-```
-
-### Environment Variables Login Method
-Environment variables for the Kintone subdomain and login information can be set in advance. Let's save time by not inputting login information per `npm run start` command.  
-
-#### For Windows/ [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview)
-
-Set environment variables with Kintone information in advance by entering the following command in your PowerShell:
-
-  ```PowerShell
-  set-item "env:KINTONE_BASE_URL" <subdomain>.kintone.com
-  set-item "env:KINTONE_USERNAME" <user name>
-  set-item "env:KINTONE_PASSWORD" <user password>
-  ```
-
-Verify that the environment variables were set correctly
-
-  ```PowerShell
-   # View all the environment variables
-   $env:path -split ";"
-
-   # View environment variables in current directory
-   Get-Item .
-  ```
-
-#### For Mac/ [Terminal](https://support.apple.com/guide/terminal/welcome/mac)
-
-Set environment variables with Kintone information in advance by entering the following command in your Terminal:
-
-  ```shell
-  export KINTONE_BASE_URL=<subdomain>.kintone.com
-
-  export KINTONE_USERNAME=<user name>
-
-  export KINTONE_PASSWORD=<user password>
-  ```
-
-Verify that the environment variables were set correctly
-
-  ```shell
-  echo $KINTONE_BASE_URL
-
-  echo $KINTONE_USERNAME
-
-  echo $KINTONE_PASSWORD
-  ```
-
----
-
 ## Build the customization
 1. Build the customization in the following files inside `./src/`
    * `index.html`
@@ -226,6 +135,14 @@ Good luck coding!
 ## Debugging - Let's Fix Those Problems 💪
 
 Here is a rundown of common problems that may occur & its solutions!  
+
+### Errors related to .env
+If you get one of the following error messages, then please verify your `.env` file has been correctly configured and you have not modified the `.env.example`
+
+  * `[webpack-cli] Error: Missing environment variable: KINTONE_BASE_URL`
+  * `[webpack-cli] Error: Missing environment variable: KINTONE_USERNAME`
+  * `[webpack-cli] Error: Missing environment variable: KINTONE_PASSWORD`
+  * `[webpack-cli] Error: Missing environment variable: VIEW_ID`
 
 ### `npm install` command is not working
 
