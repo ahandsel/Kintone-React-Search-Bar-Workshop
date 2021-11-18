@@ -3,24 +3,9 @@
  * Notes on Kintone responses:
  * record.title.value = value of the Title field
  * record.author.value = value of the Author field
- * record.Record_number.value = value of the Record number field (unique key for the record)
+ * record.$id.value = value of the Record number field (unique key for the record)
  */
-/**
-const callRestApi = async () => {
-    const response = await fetch(restEndpoint);
-    const jsonResponse = await response.json();
-    console.log(jsonResponse);
-    return JSON.stringify(jsonResponse);
-};
 
-function RenderResult() {
-  const [apiResponse, setApiResponse] = useState("*** now loading ***");
-
-  useEffect(() => {
-      callRestApi().then(
-          result => setApiResponse(result));
-  },[]);
- */
 export default async function getRecords() {
 
   const body = {

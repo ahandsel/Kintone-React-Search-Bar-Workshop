@@ -59,7 +59,7 @@ import getRecords from './getRecords.js';
         <div>
           <input
             type="text"
-            placeholder="Search"
+            placeholder="Search Manga Titles"
             onChange={handleChange}
           />
           <ul>
