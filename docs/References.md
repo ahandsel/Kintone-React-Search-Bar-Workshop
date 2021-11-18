@@ -1,4 +1,7 @@
 # References
+
+Here are links to articles and tutorials that was used to build this project.
+
   * [Setup react with webpack and babel | by Prateek Srivastava | Medium](https://medium.com/age-of-awareness/setup-react-with-webpack-and-babel-5114a14a47e9)
   * [webpack を利用する kintone カスタマイズ開発の流れ | by @yamaryu0508 | Qiita](https://qiita.com/yamaryu0508/items/1abbef9a50e1e7fc3d2f)
   * [Introduction to customize-uploader | Kintone Developer Program](https://developer.kintone.io/hc/en-us/articles/360017405154)
