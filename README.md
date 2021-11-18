@@ -34,9 +34,9 @@ git clone -b workshop https://github.com/ahandsel/Kintone_React_Search_Bar
 
 cd Kintone_React_Search_Bar
 
-  npm install
+npm install
 
-  npm install -g @kintone/customize-uploader
+npm install -g @kintone/customize-uploader
 ```
 
 ### ⚡ Notes ⚡
