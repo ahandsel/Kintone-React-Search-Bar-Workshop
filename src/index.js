@@ -1,6 +1,8 @@
 // Get started by importing the React JavaScript library & Hooks
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+
+// Import CSS for styling
 import './index.css';
 
 // Import the script to make GET API calls
@@ -14,7 +16,7 @@ import SearchBar from './components/SearchBar.js'
   'use strict';
 
   // Increment to confirm script version on Kintone
-  const scriptVer = '2.4.7';
+  const scriptVer = '1.0.0';
   console.log(`\nScript version: ${scriptVer}\n\n`);
 
   // Set Custom View's ID in .env
@@ -31,12 +33,13 @@ import SearchBar from './components/SearchBar.js'
       // Establish useState by giving it our initial state
       // const [state, setState] = useState(initialState);
 
-      // listItem holds the initial API response
-      const [listItem, setListItem] = useState();
+      // listItems holds the initial API response
+      const [listItems, setListItems] = useState('*** now loading ***');
       const [searchResults, setSearchResults] = useState([]);
 
       const handleChange = e => {
-        let filterResults = listItem.filter(dataRecord => dataRecord.title.toLowerCase().includes(e.target.value.toLowerCase()));
+        let filterResults = listItems.filter(dataRecord => dataRecord.title.toLowerCase().includes(e.target.value.toLowerCase()));
+        console.log('filterResults');
         console.log(filterResults);
         setSearchResults(filterResults);
       };
@@ -48,12 +51,11 @@ import SearchBar from './components/SearchBar.js'
       useEffect(() => {
         getRecords().then(
           result => {
-            setListItem(result);
+            setListItems(result);
             setSearchResults(result);
           }
         );
       }, []);
-
 
       return (
         // JSX includes html-like syntax

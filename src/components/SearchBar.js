@@ -5,6 +5,8 @@
 
 // visually-hidden label is for accessibility purpose: screen reader sees it while others don't
 
+// ImSearch is an icon stored in the react-icons/im library
+
 import { ImSearch } from "react-icons/im";
 
 export default function SearchBar(props) {

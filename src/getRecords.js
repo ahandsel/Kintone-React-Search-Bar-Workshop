@@ -26,9 +26,5 @@ export default async function getRecords() {
       title: record.title.value
     })
   });
-
-  console.log('listItemArray');
-  console.log(listItemArray);
-
   return listItemArray;
 };
