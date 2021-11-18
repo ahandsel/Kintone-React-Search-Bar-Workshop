@@ -14,8 +14,9 @@ Here are links to articles and tutorials that was used to build this project.
   * [How to build a search bar in React · Emma Goto](https://www.emgoto.com/react-search-bar/)
   * [React & REST API Series' Articles - DEV Community 👩‍💻👨‍💻](https://dev.to/will_yama/series/11707)
   * ["Regenerator Runtime is not defined" error when using async / await with Webpack + Babel-Notes that Kiriu doesn't read](https://note.kiriukun.com/entry/20200704-regeneratorRuntime-is-not-defined)
+  * [List of best-selling manga - Wikipedia](https://en.wikipedia.org/wiki/List_of_best-selling_manga)
 
-## Kintone Tutorials on Custom Views:
+## Kintone Tutorials on Custom Views
   * [Create a search form in a Custom View with Vue.js](https://developer.kintone.io/hc/en-us/articles/360000514874)
   * [Custom views with pagination and filtering](https://developer.kintone.io/hc/en-us/articles/115002487174)
   * [Display record data in a custom view](https://developer.kintone.io/hc/en-us/articles/900000010623)
