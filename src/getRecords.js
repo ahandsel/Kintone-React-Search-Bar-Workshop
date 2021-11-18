@@ -20,28 +20,30 @@ function RenderResult() {
       callRestApi().then(
           result => setApiResponse(result));
   },[]);
- */ 
+ */
 export default async function getRecords() {
-  const respRecords = await kintone.api(kintone.api.url('/k/v1/records', true), 'GET', {
+
+  const body = {
     'app': kintone.app.getId(),
     'query': 'order by $id asc'
+  };
+
+  const resp = await kintone.api(kintone.api.url('/k/v1/records', true), 'GET', body
+  );
+  let listItemArray = [];
+
+  let respRecords = resp.records; // array of records (objects)
+
+  respRecords.forEach(function (record) {
+    listItemArray.push({
+      uniqueKey: record.$id.value,
+      author: record.author.value,
+      title: record.title.value
+    })
   });
 
-  console.log('respRecords');
-  console.log(respRecords);
+  console.log('listItemArray');
+  console.log(listItemArray);
 
-  let uniqueKey, title, author;
-
-  // // Map (1->1 transform) an array of records from the formatted API response to an array of list items
-  const ListItemArray = respRecords.records.map(
-    record => {
-      uniqueKey = record.Record_number.value;
-      title = record.title.value;
-      author = record.author.value;
-
-      return <li key={uniqueKey}><b>{title}</b> written by {author}</li>
-    }
-  )
-
-  return ListItemArray;
+  return listItemArray;
 };

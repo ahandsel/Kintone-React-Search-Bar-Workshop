@@ -7,21 +7,18 @@ import './index.css';
 import getRecords from './getRecords.js';
 
 // Import the list & form components
-import ListItems from './components/ListItems.js'
+// import ListItems from './components/ListItems.js'
 // import InputForm from './components/InputForm.js'
 
 (function () {
   'use strict';
 
-    // Increment to confirm script version on Kintone
-    const scriptVer = '2.4.6';
-    console.log(`\nScript version: ${scriptVer}\n\n`);
+  // Increment to confirm script version on Kintone
+  const scriptVer = '2.4.7';
+  console.log(`\nScript version: ${scriptVer}\n\n`);
 
   // Set Custom View's ID in .env
   const customViewID = Number(process.env.VIEW_ID);
-
-  // Get Kintone data in insert into kintoneRecords!
-  let kintoneRecords = [];
 
   kintone.events.on('app.record.index.show', function (event) {
     if (event.viewId !== customViewID) {
@@ -29,44 +26,31 @@ import ListItems from './components/ListItems.js'
       return event;
     }
 
-    kintoneRecords = getRecords();
-
-    console.log('kintoneRecords @index');
-    console.log(kintoneRecords);
-
     function App() {
 
       // Establish useState by giving it our initial state
       // const [state, setState] = useState(initialState);
-      const [listItems, setListItems] = useState('*** now loading ***');
-      const [searchTerm, setSearchTerm] = React.useState("");
+      const [listItem, setListItem] = useState('*** now loading ***');
+
       const [searchResults, setSearchResults] = React.useState([]);
+
       const handleChange = e => {
-        setSearchTerm(e.target.value);
+        let filterResults = listItem.filter(dataRecord => dataRecord.title.toLowerCase().includes(e.target.value.toLowerCase()));
+        console.log(filterResults);
       };
 
       useEffect(() => {
         getRecords().then(
-          result => setListItems(result)
+          result => setListItem(result)
         );
+        console.log('listItem');
+        console.log(listItem);
       }, []);
-      console.log('listItems');
-      console.log(listItems);
 
-      React.useEffect(() => {
-        console.log('Search term changed');
-        const results = listItems.filter(dataRecord =>
-          dataRecord.toLowerCase().includes(searchTerm)
-        );
-        console.log('results');
-        console.log(results);
-        setSearchResults(results);
-      }, [searchTerm]);
+
       // useEffect takes 2 arguments:
       // 1st = a function, called effect, that is executed when the React Component is rendered
       // 2nd = Array of dependencies to control when effect is to be executed after mounting the component; Empty array = only invoke effect once
-
-
 
       return (
         // JSX includes html-like syntax
@@ -74,7 +58,6 @@ import ListItems from './components/ListItems.js'
           <input
             type="text"
             placeholder="Search"
-            value={searchTerm}
             onChange={handleChange}
           />
           <ul>
@@ -82,43 +65,10 @@ import ListItems from './components/ListItems.js'
               <li>{item}</li>
             ))}
           </ul>
-          <ListItems list={listItems} />
+          {/* <ListItems list={listItems} /> */}
         </div>
       );
     }
-
-    //   const [searchResults, setSearchResults] = React.useState([]);
-    //   const handleChange = e => {
-    //     setListItems(e.target.value);
-    //   };
-
-    //   // useEffect takes 2 arguments:
-    //   // 1st = a function, called effect, that is executed when the React Component is rendered
-    //   // 2nd = Array of dependencies to control when effect is to be executed after mounting the component; Empty array = only invoke effect once
-
-    //   React.useEffect(() => {
-    //     // const results = kintoneRecords.filter(kintoneRecords =>
-    //     //   kintoneRecords.toLowerCase().includes(listItems)
-    //     // );
-    //     // setSearchResults(results);
-    //     setSearchResults(kintoneRecords);
-    //   }, [listItems]);
-    //   return (
-    //     <div className="App">
-    //       <input
-    //         type="text"
-    //         placeholder="Search"
-    //         // value={listItems}
-    //         onChange={handleChange}
-    //       />
-    //       <ul>
-    //         {searchResults.map(item => (
-    //           <li>{item}</li>
-    //         ))}
-    //       </ul>
-    //     </div>
-    //   );
-    // }
 
     ReactDOM.render(
       <React.StrictMode >
