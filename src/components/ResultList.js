@@ -6,7 +6,7 @@
 export default function ResultList(props) {
 
   return (
-    <div>
+    <div className='ResultList'>
       <ul>
         {props.searchResults.map(function (resultRecord, index) {
           return <li key={index}>{resultRecord.title} by {resultRecord.author}</li>;

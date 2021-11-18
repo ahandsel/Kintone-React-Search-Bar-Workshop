@@ -6,9 +6,9 @@ import './index.css';
 // Import the script to make GET API calls
 import getRecords from './getRecords.js';
 
-// Import the list & form components
+// Import the list & search bar components
 import ResultList from './components/ResultList.js'
-// import InputForm from './components/InputForm.js'
+import SearchBar from './components/SearchBar.js'
 
 (function () {
   'use strict';
@@ -41,6 +41,10 @@ import ResultList from './components/ResultList.js'
         setSearchResults(filterResults);
       };
 
+      // useEffect takes 2 arguments:
+      // 1st = a function, called effect, that is executed when the React Component is rendered
+      // 2nd = Array of dependencies to control when effect is to be executed after mounting the component; Empty array = only invoke effect once
+
       useEffect(() => {
         getRecords().then(
           result => {
@@ -50,18 +54,11 @@ import ResultList from './components/ResultList.js'
         );
       }, []);
 
-      // useEffect takes 2 arguments:
-      // 1st = a function, called effect, that is executed when the React Component is rendered
-      // 2nd = Array of dependencies to control when effect is to be executed after mounting the component; Empty array = only invoke effect once
 
       return (
         // JSX includes html-like syntax
-        <div>
-          <input
-            type="text"
-            placeholder="Search Manga Titles"
-            onChange={handleChange}
-          />
+        <div className='App'>
+          <SearchBar handleChange={handleChange} />
           <ResultList searchResults={searchResults} />
         </div>
       );
