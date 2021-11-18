@@ -8,6 +8,7 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 * [Get Started](#get-started)
   * [⚡ Notes ⚡](#-notes-)
 * [Overview of the Repo](#overview-of-the-repo)
+* [| src/components/SearchBar.js   | Creates the search bar input                                                 | _Nope_                 |](#-srccomponentssearchbarjs----creates-the-search-bar-input--------------------------------------------------nope-----------------)
 * [Kintone Web Database & Credentials](#kintone-web-database--credentials)
   * [🚀 Getting your FREE Kintone Database](#-getting-your-free-kintone-database)
 * [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
@@ -34,9 +35,9 @@ git clone https://github.com/ahandsel/Kintone_React_Search_Bar
 
 cd Kintone_React_Search_Bar
 
-  npm install
+npm install
 
-  npm install -g @kintone/customize-uploader
+npm install -g @kintone/customize-uploader
 ```
 
 ### ⚡ Notes ⚡
@@ -56,26 +57,25 @@ cd Kintone_React_Search_Bar
 
 ## Overview of the Repo
 
-| File                                                         | Purpose                                                                               | Need to Modify? |
-| ------------------------------------------------------------ | ------------------------------------------------------------------------------------- | --------------- |
-| [package.json](package.json)                                 | Holds the project's metadata and scripts for building and uploading the customization | _Nope_          |
-| [webpack.config.js](webpack.config.js)                       | Holds the Webpack's configuration for the react project                               | _Nope_          |
-|                                                              |                                                                                       |                 |
-| [.env.example](.env.example)                                 | The template for the .env file                                                        | _Nope_          |
-| [.env](.env)                                                 | Holds the Kintone login credential and View ID                                        | Yes! - Code it  |
-|                                                              |                                                                                       |                 |
-| [scripts/npm-start.js](scripts/npm-start.js)                 | Script that uses `npm-run-all` and runs `build` and `upload` scripts in parallel      | _Nope_          |
-| [dest/customize-manifest.json](dest/customize-manifest.json) | Kintone Customize Uploader's configuration file; Replace `181` with your App ID       | Yes!            |
-| [dist/KintoneCustomization.js](dist/KintoneCustomization.js) | The bundled JS build that will be uploaded to Kintone                                 | _Nope_          |
+| File                                                         | Purpose                                                                      | Need to Modify?        |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------- | ---------------------- |
+| [package.json](package.json)                                 | Project's metadata & scripts for building and uploading the customization    | _Nope_                 |
+| [webpack.config.js](webpack.config.js)                       | Holds the Webpack's configuration for the react project                      | _Nope_                 |
+|                                                              |                                                                              |                        |
+| [.env.example](.env.example)                                 | The template for the .env file                                               | _Nope_                 |
+| [.env](.env)                                                 | Holds the Kintone login credential and View ID                               | Yes! - Code it         |
+|                                                              |                                                                              |                        |
+| [scripts/npm-start.js](scripts/npm-start.js)                 | Script that uses `npm-run-all` to run `build` & `upload` scripts in parallel | _Nope_                 |
+| [dest/customize-manifest.json](dest/customize-manifest.json) | Kintone Customize Uploader's configuration file                              | Yes! - Add your App ID |
+| [dist/KintoneCustomization.js](dist/KintoneCustomization.js) | The bundled JS build that will be uploaded to Kintone                        | _Nope_                 |
 |                                                              |
-| [src/index.js](src/index.js)                                 | Heart of the React Project handling `<App />` and Kintone Events                      | _Nope_          |
-| [src/index.html](src/index.html)                             | HTML that reflects the Kintone Custom View; Only `<div id="root"></div>`              | _Nope_          |
-| [src/index.css](src/index.css)                               | Styling for the React Project                                                         | _Nope_          |
-| [src/getRecords.js](src/getRecords.js)                       | Fetches Kintone records, transforms response, & returns array of objects              | _Nope_          |
-|                                                              |
-| [src/components/ResultList.js](src/components/ResultList.js) | Creates a list from the list items array                                              | _Nope_          |
-| [src/components/SearchBar.js](src/components/SearchBar.js)   | Creates the search bar input                                                          | _Nope_          |
-
+| [src/index.js](src/index.js)                                 | Heart of the React Project handling `<App />` and Kintone Events             | _Nope_                 |
+| [src/index.html](src/index.html)                             | HTML that reflects the Kintone Custom View; Only `<div id="root"></div>`     | _Nope_                 |
+| [src/index.css](src/index.css)                               | Styling for the React Project                                                | _Nope_                 |
+| [src/getRecords.js](src/getRecords.js)                       | Fetches Kintone records, transforms response, & returns array of objects     | _Nope_                 |
+|                                                              |                                                                              |                        |
+| [src/components/ResultList.js](src/components/ResultList.js) | Creates a list from the list items array                                     | _Nope_                 |
+| [src/components/SearchBar.js](src/components/SearchBar.js)   | Creates the search bar input                                                 | _Nope_                 |
 ---
 
 ## Kintone Web Database & Credentials
