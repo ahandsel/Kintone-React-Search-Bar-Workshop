@@ -1,4 +1,4 @@
-// getRecords.js - Fetches Kintone records, transforms response, & returns array of list items
+// getRecords.js - Fetches Kintone records, transforms response, & returns array of objects per record
 /**
  * Notes on Kintone responses:
  * record.title.value = value of the Title field
@@ -26,5 +26,8 @@ export default async function getRecords() {
       title: record.title.value
     })
   });
+
+  console.log('listItemArray');
+  console.log(listItemArray);
   return listItemArray;
 };
