@@ -19,7 +19,6 @@ import ListItems from './components/ListItems.js'
 
   // Set Custom View's ID in .env
   const customViewID = Number(process.env.VIEW_ID);
-  let recordsOnPage = 100;
 
   // Get Kintone data in insert into kintoneRecords!
   let kintoneRecords = [];
@@ -29,40 +28,61 @@ import ListItems from './components/ListItems.js'
       console.log(`\nCurrently not on the specified Custom View.\nView ID is set to ${customViewID}.\n\n`);
       return event;
     }
-    // // if (event.records.length >= recordsOnPage) {
-    // //   // getRecords() method
-    //   kintoneRecords = getRecords();
-    // // } else {
-    // //   // event.records method
-    // //   kintoneRecords = event.records;
-    // //   console.log(kintoneRecords);
-    // // }
 
-    // // kintoneRecords = event.records;
-    //   console.log('kintoneRecords @index');
-    //   console.log(kintoneRecords);
+    kintoneRecords = getRecords();
+
+    console.log('kintoneRecords @index');
+    console.log(kintoneRecords);
 
     function App() {
 
       // Establish useState by giving it our initial state
       // const [state, setState] = useState(initialState);
       const [listItems, setListItems] = useState('*** now loading ***');
-
-      // useEffect takes 2 arguments:
-      // 1st = a function, called effect, that is executed when the React Component is rendered
-      // 2nd = Array of dependencies to control when effect is to be executed after mounting the component; Empty array = only invoke effect once
+      const [searchTerm, setSearchTerm] = React.useState("");
+      const [searchResults, setSearchResults] = React.useState([]);
+      const handleChange = e => {
+        setSearchTerm(e.target.value);
+      };
 
       useEffect(() => {
         getRecords().then(
           result => setListItems(result)
         );
       }, []);
+      console.log('listItems');
+      console.log(listItems);
+
+      React.useEffect(() => {
+        console.log('Search term changed');
+        const results = listItems.filter(dataRecord =>
+          dataRecord.toLowerCase().includes(searchTerm)
+        );
+        console.log('results');
+        console.log(results);
+        setSearchResults(results);
+      }, [searchTerm]);
+      // useEffect takes 2 arguments:
+      // 1st = a function, called effect, that is executed when the React Component is rendered
+      // 2nd = Array of dependencies to control when effect is to be executed after mounting the component; Empty array = only invoke effect once
+
+
 
       return (
         // JSX includes html-like syntax
         <div>
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={handleChange}
+          />
+          <ul>
+            {searchResults.map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
           <ListItems list={listItems} />
-          {/* <InputForm setListItems={setListItems} /> */}
         </div>
       );
     }
