@@ -30,23 +30,25 @@ import getRecords from './getRecords.js';
 
       // Establish useState by giving it our initial state
       // const [state, setState] = useState(initialState);
-      const [listItem, setListItem] = useState('*** now loading ***');
 
-      const [searchResults, setSearchResults] = React.useState([]);
+      // listItem holds the initial API response
+      const [listItem, setListItem] = useState();
+      const [searchResults, setSearchResults] = useState([]);
 
       const handleChange = e => {
         let filterResults = listItem.filter(dataRecord => dataRecord.title.toLowerCase().includes(e.target.value.toLowerCase()));
         console.log(filterResults);
+        setSearchResults(filterResults);
       };
 
       useEffect(() => {
         getRecords().then(
-          result => setListItem(result)
+          result => {
+            setListItem(result);
+            setSearchResults(result);
+          }
         );
-        console.log('listItem');
-        console.log(listItem);
       }, []);
-
 
       // useEffect takes 2 arguments:
       // 1st = a function, called effect, that is executed when the React Component is rendered
@@ -61,11 +63,10 @@ import getRecords from './getRecords.js';
             onChange={handleChange}
           />
           <ul>
-            {searchResults.map(item => (
-              <li>{item}</li>
-            ))}
+            {searchResults.map(function (resultRecord, index) {
+              return <li key={index}>{resultRecord.title} by {resultRecord.author}</li>;
+            })}
           </ul>
-          {/* <ListItems list={listItems} /> */}
         </div>
       );
     }
