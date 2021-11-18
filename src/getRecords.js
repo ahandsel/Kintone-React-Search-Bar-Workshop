@@ -24,16 +24,16 @@ function RenderResult() {
 export default async function getRecords() {
   const respRecords = await kintone.api(kintone.api.url('/k/v1/records', true), 'GET', {
     'app': kintone.app.getId(),
-    'query': 'query=order by Record_number asc'
+    'query': 'order by $id asc'
   });
-  const jsonResponse = await respRecords.json();
 
-  console.log(jsonResponse);
+  console.log('respRecords');
+  console.log(respRecords);
 
   let uniqueKey, title, author;
 
-  // Map (1->1 transform) an array of records from the formatted API response to an array of list items
-  const ListItemArray = jsonResponse.records.map(
+  // // Map (1->1 transform) an array of records from the formatted API response to an array of list items
+  const ListItemArray = respRecords.records.map(
     record => {
       uniqueKey = record.Record_number.value;
       title = record.title.value;

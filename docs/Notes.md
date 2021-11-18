@@ -1,5 +1,8 @@
 # Notes on the Kintone x React - Search Bar Workshop
 
+Working w/out Kintone
+https://cafe.kintone.com/k/170/
+
 ## Overview of Notes.md <!-- omit in toc -->
   * [Workshop Overview](#workshop-overview)
 
@@ -34,6 +37,22 @@
 
 ## Code the Search Bar Build
 
+## npm-run-
+https://gist.github.com/ahandsel/7ce4e006fae8b635774f9447336c3a50
+
+npm-start.js
+
+failor -> error -> filter catches
+Now we want to do something useful with the error
+Error as an object -> cautch error -> array
+
+Results as an array
+[ { name: 'dev', code: undefined }, { name: 'upload', code: 1 } ]
+
+undefined if not finished
+0 is no error
+1 is an error
+.filter -> callback function is loop through the array looking for the check
 
 
 ## event.records
