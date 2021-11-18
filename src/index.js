@@ -62,11 +62,6 @@ import ResultList from './components/ResultList.js'
             placeholder="Search Manga Titles"
             onChange={handleChange}
           />
-          {/* <ul>
-            {searchResults.map(function (resultRecord, index) {
-              return <li key={index}>{resultRecord.title} by {resultRecord.author}</li>;
-            })}
-          </ul> */}
           <ResultList searchResults={searchResults} />
         </div>
       );
