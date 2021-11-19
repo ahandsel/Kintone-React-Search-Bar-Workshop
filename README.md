@@ -199,3 +199,4 @@ Check out our [Sign up for Kintone Developer Program & Developer License](https:
 | [Workshop.md](docs/Workshop.md)                     | Workshop Overview & Notes                                                     |
 | [References.md](docs/References.md)                 | List of all the articles refereed to when building this project               |
 | [Manga_Data.csv](docs/Manga_Data.csv)               | Manga title and author data that can be uploaded to your Kintone Manga DB App |
+| [CustomizeUploader.md](docs/CustomizeUploader.md)   | Guide on configuring the @kintone/customize-uploader                          |
