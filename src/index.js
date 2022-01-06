@@ -15,10 +15,6 @@ import SearchBar from './components/SearchBar.js'
 (function () {
   'use strict';
 
-  // Increment to confirm script version on Kintone
-  const scriptVer = '1.0.0';
-  console.log(`\nScript version: ${scriptVer}\n\n`);
-
   // Set Custom View's ID in .env
   const customViewID = Number(process.env.VIEW_ID);
 
