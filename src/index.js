@@ -34,9 +34,8 @@ import SearchBar from './components/SearchBar.js'
       const [searchResults, setSearchResults] = useState([]);
 
       const handleChange = e => {
-        let filterResults = listItems.filter(dataRecord => dataRecord.title.toLowerCase().includes(e.target.value.toLowerCase()));
-        console.log('filterResults');
-        console.log(filterResults);
+        let filterResults = listItems.filter(record => record.title.toLowerCase().includes(e.target.value.toLowerCase()));
+        console.log('filterResults: \n', filterResults);
         setSearchResults(filterResults);
       };
 
