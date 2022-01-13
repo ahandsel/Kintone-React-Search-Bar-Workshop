@@ -30,7 +30,7 @@ import SearchBar from './components/SearchBar.js'
       // const [state, setState] = useState(initialState);
 
       // listItems holds the initial API response
-      const [listItems, setListItems] = useState('*** now loading ***');
+      const [listItems, setListItems] = useState([]);
       const [searchResults, setSearchResults] = useState([]);
 
       const handleChange = e => {
@@ -52,13 +52,23 @@ import SearchBar from './components/SearchBar.js'
         );
       }, []);
 
-      return (
-        // JSX includes html-like syntax
-        <div className='App'>
-          <SearchBar handleChange={handleChange} />
-          <ResultList searchResults={searchResults} />
-        </div>
-      );
+      // EXERCISE: Rewrite this if-else statement as a ternary statement
+      if (listItems.length > 0) {
+        return (
+          // JSX includes html-like syntax
+          <div className='App'>
+            <SearchBar handleChange={handleChange} />
+            <ResultList searchResults={searchResults} />
+          </div>
+        );
+      } else {
+        return (
+          <div className='App'>
+            <SearchBar handleChange={handleChange} />
+            <p>*** now loading ***</p>
+          </div>
+        );
+      }
     }
 
     ReactDOM.render(
