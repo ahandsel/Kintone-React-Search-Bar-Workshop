@@ -38,4 +38,3 @@ Ternary Statement
     </div>
   );
   ```
-
