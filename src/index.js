@@ -7,6 +7,7 @@ import './index.css';
 
 // Import the script to make GET API calls
 import getRecords from './getRecords.js';
+import getRecords from './requests/getRecords.js';
 
 // Import the list & search bar components
 import ResultList from './components/ResultList.js'
