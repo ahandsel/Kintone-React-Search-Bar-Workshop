@@ -33,9 +33,16 @@ import SearchBar from './components/SearchBar.js'
       const [listItems, setListItems] = useState([]);
       const [searchResults, setSearchResults] = useState([]);
 
-      const handleChange = e => {
-        let filterResults = listItems.filter(record => record.title.toLowerCase().includes(e.target.value.toLowerCase()));
+      /**
+       * filter() accepts a function as a parameter. That function acts as a condition to evaluate each item in the array as true-or-false. filter() then returns an array of items passing that condition.
+       */
+      const handleChange = e => { // e is a typical way to name the browser-generated event object
+        let filterResults = listItems.filter(record =>
+          record.title.toLowerCase().includes(e.target.value.toLowerCase()) // filter condition
+        );
+
         console.log('filterResults: \n', filterResults);
+
         setSearchResults(filterResults);
       };
 
