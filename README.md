@@ -161,6 +161,7 @@ Here is a rundown of common problems that may occur & its solutions!
 
 If you get one of the following error messages, then please verify your `.env` file has been correctly configured and you have not modified the `.env.example`
 
+  * `Failed to find .env file at default paths: [./.env,./.env.js,./.env.json]`
   * `[webpack-cli] Error: Missing environment variable: KINTONE_BASE_URL`
   * `[webpack-cli] Error: Missing environment variable: KINTONE_USERNAME`
   * `[webpack-cli] Error: Missing environment variable: KINTONE_PASSWORD`
