@@ -19,15 +19,16 @@ export default async function getRecords() {
 
   let respRecords = resp.records; // array of records (objects)
 
-  respRecords.forEach(function (record) {
-    listItemArray.push({
-      uniqueKey: record.$id.value,
+  listItemArray = respRecords.map(function (record) {
+    return {
+      uniqueKey: record.$id.value, // $id = Automatically generated Record ID
       author: record.author.value,
       title: record.title.value
-    })
+    }
   });
 
-  console.log('listItemArray');
-  console.log(listItemArray);
+  console.log('listItemArray: \n', listItemArray);
+
+  // Used in setListItems() and setSearchResults() in index.js
   return listItemArray;
 };

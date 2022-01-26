@@ -26,8 +26,8 @@ module.exports = {
           loader: 'babel-loader', // https://webpack.js.org/loaders/babel-loader/#root
           options: {
             presets: [
-              '@babel/preset-env', 
-              ['@babel/preset-react', {'runtime': 'automatic'}]
+              '@babel/preset-env',
+              ['@babel/preset-react', { 'runtime': 'automatic' }]
             ],  // https://babeljs.io/docs/en/presets/
             plugins: ['@babel/plugin-transform-runtime'],
           }

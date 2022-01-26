@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 // Import the script to make GET API calls
-import getRecords from './getRecords.js';
+import getRecords from './requests/getRecords.js';
 
 // Import the list & search bar components
 import ResultList from './components/ResultList.js'
@@ -14,10 +14,6 @@ import SearchBar from './components/SearchBar.js'
 
 (function () {
   'use strict';
-
-  // Increment to confirm script version on Kintone
-  const scriptVer = '1.0.0';
-  console.log(`\nScript version: ${scriptVer}\n\n`);
 
   // Set Custom View's ID in .env
   const customViewID = Number(process.env.VIEW_ID);
@@ -34,13 +30,19 @@ import SearchBar from './components/SearchBar.js'
       // const [state, setState] = useState(initialState);
 
       // listItems holds the initial API response
-      const [listItems, setListItems] = useState('*** now loading ***');
+      const [listItems, setListItems] = useState([]);
       const [searchResults, setSearchResults] = useState([]);
 
-      const handleChange = e => {
-        let filterResults = listItems.filter(dataRecord => dataRecord.title.toLowerCase().includes(e.target.value.toLowerCase()));
-        console.log('filterResults');
-        console.log(filterResults);
+      /**
+       * filter() accepts a function as a parameter. That function acts as a condition to evaluate each item in the array as true-or-false. filter() then returns an array of items passing that condition.
+       */
+      const handleChange = e => { // e is a typical way to name the browser-generated event object
+        let filterResults = listItems.filter(record =>
+          record.title.toLowerCase().includes(e.target.value.toLowerCase()) // filter condition
+        );
+
+        console.log('filterResults: \n', filterResults);
+
         setSearchResults(filterResults);
       };
 
@@ -57,13 +59,23 @@ import SearchBar from './components/SearchBar.js'
         );
       }, []);
 
-      return (
-        // JSX includes html-like syntax
-        <div className='App'>
-          <SearchBar handleChange={handleChange} />
-          <ResultList searchResults={searchResults} />
-        </div>
-      );
+      // EXERCISE: Rewrite this if-else statement as a ternary statement
+      if (listItems.length > 0) {
+        return (
+          // JSX includes html-like syntax
+          <div className='App'>
+            <SearchBar handleChange={handleChange} />
+            <ResultList searchResults={searchResults} />
+          </div>
+        );
+      } else {
+        return (
+          <div className='App'>
+            <SearchBar handleChange={handleChange} />
+            <p>*** now loading ***</p>
+          </div>
+        );
+      }
     }
 
     ReactDOM.render(

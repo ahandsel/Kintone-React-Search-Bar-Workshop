@@ -7,7 +7,7 @@
 
 // ImSearch is an icon stored in the react-icons/im library
 
-import { ImSearch } from "react-icons/im";
+import { ImSearch as SearchIcon } from "react-icons/im";
 
 export default function SearchBar(props) {
 
@@ -25,7 +25,7 @@ export default function SearchBar(props) {
           name='Search Bar for Manga Titles'
           onChange={props.handleChange}
         />
-        <button className="SearchButton" type='button'><ImSearch /></button>
+        <button className="SearchButton" type='button'><SearchIcon /></button>
       </form>
     </div>
   );

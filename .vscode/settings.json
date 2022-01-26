@@ -1,7 +1,6 @@
 {
   "[js]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "TypeScript and JavaScript Language Features"
   },
   "[markdown]": {
     "editor.formatOnSave": true,

@@ -65,13 +65,13 @@ npm install -g @kintone/customize-uploader
 | [.env](.env)                                                 | Holds the Kintone login credential and View ID                               | Yes! - Code it         |
 |                                                              |                                                                              |                        |
 | [scripts/npm-start.js](scripts/npm-start.js)                 | Script that uses `npm-run-all` to run `build` & `upload` scripts in parallel | _Nope_                 |
-| [dest/customize-manifest.json](dest/customize-manifest.json) | Kintone Customize Uploader's configuration file                              | Yes! - Add your App ID |
+| [customize-manifest.json](customize-manifest.json)           | Kintone Customize Uploader's configuration file                              | Yes! - Add your App ID |
 | [dist/KintoneCustomization.js](dist/KintoneCustomization.js) | The bundled JS build that will be uploaded to Kintone                        | _Nope_                 |
 |                                                              |
 | [src/index.js](src/index.js)                                 | Heart of the React Project handling `<App />` and Kintone Events             | _Nope_                 |
 | [src/index.html](src/index.html)                             | HTML that reflects the Kintone Custom View; Only `<div id="root"></div>`     | _Nope_                 |
 | [src/index.css](src/index.css)                               | Styling for the React Project                                                | _Nope_                 |
-| [src/getRecords.js](src/getRecords.js)                       | Fetches Kintone records, transforms response, & returns array of objects     | _Nope_                 |
+| [src/getRecords.js](src/requests/getRecords.js)              | Fetches Kintone records, transforms response, & returns array of objects     | _Nope_                 |
 |                                                              |                                                                              |                        |
 | [src/components/ResultList.js](src/components/ResultList.js) | Creates a list from the list items array                                     | _Nope_                 |
 | [src/components/SearchBar.js](src/components/SearchBar.js)   | Creates the search bar input                                                 | _Nope_                 |
