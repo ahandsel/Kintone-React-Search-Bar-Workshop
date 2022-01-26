@@ -1,7 +1,5 @@
 {
   "name": "kintone_react_search_bar",
-  "version": "1.0.0",
-  "description": "",
   "version": "1.0.1",
   "description": "Kintone customization that creates a search bar that automatically filters results as the user inputs the title",
   "main": "index.js",
