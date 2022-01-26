@@ -3,8 +3,8 @@
 ## Overview <!-- omit in toc --><!-- markdownlint-disable MD007 -->
 * [What is @kintone/customize-uploader ?](#what-is-kintonecustomize-uploader-)
 * [Setting Up for @kintone/customize-uploader](#setting-up-for-kintonecustomize-uploader)
-  * [Part A: Update `dest/customize-manifest.json` with your App ID](#part-a-update-destcustomize-manifestjson-with-your-app-id)
-    * [`dest/customize-manifest.json` Template](#destcustomize-manifestjson-template)
+  * [Part A: Update `customize-manifest.json` with your App ID](#part-a-update-customize-manifestjson-with-your-app-id)
+    * [`customize-manifest.json` Template](#customize-manifestjson-template)
   * [Part B: Set your Kintone login credentials in `.env` file](#part-b-set-your-kintone-login-credentials-in-env-file)
 * [Appendix: Alternative Login Methods](#appendix-alternative-login-methods)
   * [Dialog Style Login Method](#dialog-style-login-method)
@@ -26,10 +26,10 @@ For more information on the Kintone Customize Uploader tool, refer to [Introduct
 To view the source code, refer to [js-sdk/packages/customize-uploader at master · kintone/js-sdk](https://github.com/kintone/js-sdk/tree/master/packages/customize-uploader).
 
 ## Setting Up for @kintone/customize-uploader
-1. Update `dest/customize-manifest.json` with App ID
+1. Update `customize-manifest.json` with App ID
 2. Set your Kintone login credentials in `.env` file
 
-### Part A: Update `dest/customize-manifest.json` with your App ID
+### Part A: Update `customize-manifest.json` with your App ID
 1. Determine the App ID of the Kintone App you want to upload the customizations to.
 2. Replace the `180` value for `"app"` key in the template below with the App ID.
 
@@ -41,7 +41,7 @@ To determine your Kintone App ID:
 
 Example: `https://YOUR_SUBDOMAIN.kintone.com/k/1/` -> App ID is `1`
 
-#### `dest/customize-manifest.json` Template
+#### `customize-manifest.json` Template
 
 ```json
 {

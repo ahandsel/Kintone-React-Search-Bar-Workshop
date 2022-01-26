@@ -65,7 +65,7 @@ npm install -g @kintone/customize-uploader
 | [.env](.env)                                                 | Holds the Kintone login credential and View ID                               | Yes! - Code it         |
 |                                                              |                                                                              |                        |
 | [scripts/npm-start.js](scripts/npm-start.js)                 | Script that uses `npm-run-all` to run `build` & `upload` scripts in parallel | _Nope_                 |
-| [dest/customize-manifest.json](dest/customize-manifest.json) | Kintone Customize Uploader's configuration file                              | Yes! - Add your App ID |
+| [customize-manifest.json](customize-manifest.json)           | Kintone Customize Uploader's configuration file                              | Yes! - Add your App ID |
 | [dist/KintoneCustomization.js](dist/KintoneCustomization.js) | The bundled JS build that will be uploaded to Kintone                        | _Nope_                 |
 |                                                              |
 | [src/index.js](src/index.js)                                 | Heart of the React Project handling `<App />` and Kintone Events             | _Nope_                 |
