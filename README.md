@@ -220,8 +220,8 @@ If you get one of the following error messages, then please verify your `.env` f
 
 Verify that you are inputting the exact base URL for Kintone credentials questions
 
-  * Correct: `https://example.cybozu.com` ✅
-  * Incorrect: `https://example.cybozu.com/` or `example.cybozu.com` ❌
+  * Correct: `https://example.kintone.com` ✅
+  * Incorrect: `https://example.kintone.com/` or `example.kintone.com` ❌
 
 ### How do I get my Kintone Subdomain?
 
