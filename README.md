@@ -46,8 +46,8 @@ npm install -g @kintone/customize-uploader
 ⚡ React requires **Node ≥ 10.16** & **npm ≥ 5.6** ⚡
 
   * Check the versions inside the `React_Workshop_by_Kintone` folder:
-    * `node –v`
-    * `npm –v`
+    * `node -v`
+    * `npm -v`
   * Not the correct versions or Confused? 🤔 → Check out the [Guide on Installing Node.js & npm](docs/Install_NodeJS_npm.md) Doc
 
 ⚡ Note: Please ignore the package deprecation warnings ⚡
