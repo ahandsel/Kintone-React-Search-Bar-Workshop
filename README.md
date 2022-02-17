@@ -71,7 +71,7 @@ npm install -g @kintone/customize-uploader
 | [dist/KintoneCustomization.js](dist/KintoneCustomization.js) | The bundled JS build that will be uploaded to Kintone                        |                 |
 |                                                              |
 | [src/index.js](src/index.js)                                 | Heart of the React Project handling `<App />` and Kintone Events             |                 |
-| [src/index.html](src/index.html)                             | HTML that reflects the Kintone Custom View; Only `<div id="root"></div>`     |                 |
+| [src/index.html](src/index.html)                             | HTML that reflects the Kintone Custom View <br> Only `<div id="root"></div>` |                 |
 | [src/index.css](src/index.css)                               | Styling for the React Project                                                |                 |
 | [src/getRecords.js](src/requests/getRecords.js)              | Fetches Kintone records, transforms response, & returns array of objects     |                 |
 |                                                              |                                                                              |                 |
@@ -121,18 +121,19 @@ Here are the required fields & their configurations for our workshop:
 | Text       | Title      | `title`    | The manga's title  |
 | Text       | Author     | `author`   | The manga's author |
 
+Then create a Custom View
+  * From App Settings, click on **Views** tab
+  * Click on the Plus Button ⊕ to create a View
+  * Select `Custom view` under **Visible Fields and Column Order** section
+  * Get the `View ID`! (Required in `.env` file)
+  * Under **HTML Code**, input `<div id="root"></div>`
+  * Save!
+
+Be sure to click **Save** and **Activate App** buttons! 💪
+
 Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://youtu.be/pRtfn-8cf_I) video 📺
 
 <!-- ![Create_App_Demo.gif Kintone_React_Workshop v2.1](https://user-images.githubusercontent.com/30670749/125898739-1bc018ac-1740-40e0-91cc-ab829192d2ea.gif) -->
-
-### 📺 How to Create a Kintone Database App | Video <!-- omit in toc -->
-
-<p align="center">
-  <a href="https://youtu.be/pRtfn-8cf_I">
-    <img height="200" alt="How to Create a Kintone Database App YouTube Thumbnail"
-      src="https://img.youtube.com/vi/pRtfn-8cf_I/hqdefault.jpg">
-  </a>
-</p>
 
 ---
 
@@ -181,16 +182,14 @@ So to ensure the file gets uploaded to the correct App, replace the `10` with yo
    * `index.html`, `index.js`, `index.css`, etc.
 2. Run `npm run dev` to continuously generate testing build
 3. Run `npm run production` to create a production version
-
    * To directly upload the Kintone customization, use `./dist/KintoneCustomization.js`.
    * For more details, refer to [Customizing an App with JavaScript and CSS](https://get.kintone.help/k/en/user/app_settings/js_customize.html)
-
 4. Run `npm run start`
    * This will trigger webpack & kintone-customize-uploader to run while watching `./src/index.js` for changes
    * Input Kintone credentials when asked
 5. Refresh the Kintone App to see the changes!
 
-Good luck coding!
+Good luck coding! ᕙ(⇀‸↼‶)ᕗ
 
 ---
 
