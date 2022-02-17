@@ -5,6 +5,7 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 
 ## Outline <!-- omit in toc --> <!-- markdownlint-disable MD007 -->
 
+* [Demo of Build](#demo-of-build)
 * [Get Started](#get-started)
   * [⚡ Notes ⚡](#-notes-)
 * [Overview of the Repo](#overview-of-the-repo)
@@ -22,6 +23,10 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 * [Appendix](#appendix)
 
 <!-- markdownlint-enable MD007 -->
+
+## Demo of Build
+
+![Demo gif of the search bar build on Kintone](docs/img/searchbar_demo.gif)
 
 ## Get Started
 
