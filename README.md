@@ -11,6 +11,8 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 * [Kintone Web Database & Credentials](#kintone-web-database--credentials)
   * [🚀 Getting your FREE Kintone Database](#-getting-your-free-kintone-database)
 * [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
+* [Create a `.env` file](#create-a-env-file)
+* [Input the App ID](#input-the-app-id)
 * [Build the customization](#build-the-customization)
 * [Debugging - Let's Fix Those Problems 💪](#debugging---lets-fix-those-problems-)
   * [Errors related to .env](#errors-related-to-env)
@@ -134,6 +136,45 @@ Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://
 
 ---
 
+## Create a `.env` file
+
+Using [.env.example](.env.example) file as a temple, create a `.env` file that will contain your login credentials and the Kintone App's View ID.
+
+This is what the [.env.example](.env.example) looks like:
+
+```txt
+KINTONE_BASE_URL=
+KINTONE_USERNAME=
+KINTONE_PASSWORD=
+VIEW_ID=
+```
+
+Here is what your `.env` might look like:
+
+```txt
+KINTONE_BASE_URL="https://example.kintone.com"
+KINTONE_USERNAME="example@gmail.com"
+KINTONE_PASSWORD="ILoveKintone!"
+VIEW_ID="1234567"
+```
+
+---
+
+## Input the App ID
+
+The Kintone Customize Uploader uses [customize-manifest.json](customize-manifest.json) to determine which of your Kintone Apps to upload the JavaScript file to.
+
+So to ensure the file gets uploaded to the correct App, replace the `10` with your App ID.
+
+```json
+{
+    "app": "10",
+    "scope": "ALL",
+    ...
+```
+
+---
+
 ## Build the customization
 
 1. Build the customization in the following files inside `./src/`
@@ -179,8 +220,8 @@ If you get one of the following error messages, then please verify your `.env` f
 
 Verify that you are inputting the exact base URL for Kintone credentials questions
 
-  * Correct: `https://example.cybozu.com` ✅
-  * Incorrect: `https://example.cybozu.com/` or `example.cybozu.com` ❌
+  * Correct: `https://example.kintone.com` ✅
+  * Incorrect: `https://example.kintone.com/` or `example.kintone.com` ❌
 
 ### How do I get my Kintone Subdomain?
 
