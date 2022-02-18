@@ -27,6 +27,7 @@
 ### 2) Kintone Setup
   * [ ] Log into your Kintone Subdomain
   * [ ] Create a Kintone App
+    * [ ] Add text fields for `title` and `author`
     * [ ] Create a Custom View
     * [ ] Get the View ID
   * [ ] Input sample data
