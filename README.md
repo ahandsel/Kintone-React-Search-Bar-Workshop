@@ -5,12 +5,15 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 
 ## Outline <!-- omit in toc --> <!-- markdownlint-disable MD007 -->
 
+* [Demo of Build](#demo-of-build)
 * [Get Started](#get-started)
   * [⚡ Notes ⚡](#-notes-)
 * [Overview of the Repo](#overview-of-the-repo)
 * [Kintone Web Database & Credentials](#kintone-web-database--credentials)
   * [🚀 Getting your FREE Kintone Database](#-getting-your-free-kintone-database)
 * [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
+* [Create a `.env` file](#create-a-env-file)
+* [Input the App ID](#input-the-app-id)
 * [Build the customization](#build-the-customization)
 * [Debugging - Let's Fix Those Problems 💪](#debugging---lets-fix-those-problems-)
   * [Errors related to .env](#errors-related-to-env)
@@ -18,8 +21,14 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
   * [@kintone/customize-uploader not working?](#kintonecustomize-uploader-not-working)
   * [How do I get my Kintone Subdomain?](#how-do-i-get-my-kintone-subdomain)
 * [Appendix](#appendix)
+  * [Files](#files)
+  * [Branches](#branches)
 
 <!-- markdownlint-enable MD007 -->
+
+## Demo of Build
+
+![Demo gif of the search bar build on Kintone](docs/img/searchbar_demo.gif)
 
 ## Get Started
 
@@ -44,8 +53,8 @@ npm install -g @kintone/customize-uploader
 ⚡ React requires **Node ≥ 10.16** & **npm ≥ 5.6** ⚡
 
   * Check the versions inside the `React_Workshop_by_Kintone` folder:
-    * `node –v`
-    * `npm –v`
+    * `node -v`
+    * `npm -v`
   * Not the correct versions or Confused? 🤔 → Check out the [Guide on Installing Node.js & npm](docs/Install_NodeJS_npm.md) Doc
 
 ⚡ Note: Please ignore the package deprecation warnings ⚡
@@ -56,25 +65,25 @@ npm install -g @kintone/customize-uploader
 
 ## Overview of the Repo
 
-| File                                                         | Purpose                                                                      | Need to Modify?        |
-| ------------------------------------------------------------ | ---------------------------------------------------------------------------- | ---------------------- |
-| [package.json](package.json)                                 | Project's metadata & scripts for building and uploading the customization    | _Nope_                 |
-| [webpack.config.js](webpack.config.js)                       | Holds the Webpack's configuration for the react project                      | _Nope_                 |
-|                                                              |                                                                              |                        |
-| [.env.example](.env.example)                                 | The template for the .env file                                               | _Nope_                 |
-| [.env](.env)                                                 | Holds the Kintone login credential and View ID                               | Yes! - Code it         |
-|                                                              |                                                                              |                        |
-| [scripts/npm-start.js](scripts/npm-start.js)                 | Script that uses `npm-run-all` to run `build` & `upload` scripts in parallel | _Nope_                 |
-| [customize-manifest.json](customize-manifest.json)           | Kintone Customize Uploader's configuration file                              | Yes! - Add your App ID |
-| [dist/KintoneCustomization.js](dist/KintoneCustomization.js) | The bundled JS build that will be uploaded to Kintone                        | _Nope_                 |
+| File                                                         | Purpose                                                                      | Modify?         |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------- | --------------- |
+| [package.json](package.json)                                 | Project's metadata & scripts for building and uploading the customization    |                 |
+| [webpack.config.js](webpack.config.js)                       | Holds the Webpack's configuration for the react project                      |                 |
+|                                                              |                                                                              |                 |
+| [.env.example](.env.example)                                 | The template for the .env file                                               |                 |
+| [.env](.env)                                                 | Holds the Kintone login credential and View ID                               | Create it!      |
+|                                                              |                                                                              |                 |
+| [scripts/npm-start.js](scripts/npm-start.js)                 | Script that uses `npm-run-all` to run `build` & `upload` scripts in parallel |                 |
+| [customize-manifest.json](customize-manifest.json)           | Kintone Customize Uploader's configuration file                              | Add your App ID |
+| [dist/KintoneCustomization.js](dist/KintoneCustomization.js) | The bundled JS build that will be uploaded to Kintone                        |                 |
 |                                                              |
-| [src/index.js](src/index.js)                                 | Heart of the React Project handling `<App />` and Kintone Events             | _Nope_                 |
-| [src/index.html](src/index.html)                             | HTML that reflects the Kintone Custom View; Only `<div id="root"></div>`     | _Nope_                 |
-| [src/index.css](src/index.css)                               | Styling for the React Project                                                | _Nope_                 |
-| [src/getRecords.js](src/requests/getRecords.js)              | Fetches Kintone records, transforms response, & returns array of objects     | _Nope_                 |
-|                                                              |                                                                              |                        |
-| [src/components/ResultList.js](src/components/ResultList.js) | Creates a list from the list items array                                     | _Nope_                 |
-| [src/components/SearchBar.js](src/components/SearchBar.js)   | Creates the search bar input                                                 | _Nope_                 |
+| [src/index.js](src/index.js)                                 | Heart of the React Project handling `<App />` and Kintone Events             |                 |
+| [src/index.html](src/index.html)                             | HTML that reflects the Kintone Custom View <br> Only `<div id="root"></div>` |                 |
+| [src/index.css](src/index.css)                               | Styling for the React Project                                                |                 |
+| [src/getRecords.js](src/requests/getRecords.js)              | Fetches Kintone records, transforms response, & returns array of objects     |                 |
+|                                                              |                                                                              |                 |
+| [src/components/ResultList.js](src/components/ResultList.js) | Creates a list from the list items array                                     |                 |
+| [src/components/SearchBar.js](src/components/SearchBar.js)   | Creates the search bar input                                                 |                 |
 
 ---
 
@@ -95,7 +104,7 @@ _Built for teamwork, designed by you_ <!-- markdownlint-disable MD036 --> <!-- m
 
   * [bit.ly/K_DevLic](http://bit.ly/K_DevLic)
     * ⚡ Only use lowercase, numbers, & hyphens in your subdomain
-    * ⚠ Do not use uppercase nor special characters
+    * ⚠ Do not use uppercase or special characters
 
 #### 📺 Sign up for Kintone Developer Program & Developer License | Video <!-- omit in toc -->
 
@@ -119,18 +128,58 @@ Here are the required fields & their configurations for our workshop:
 | Text       | Title      | `title`    | The manga's title  |
 | Text       | Author     | `author`   | The manga's author |
 
+Then create a Custom View
+  * From App Settings, click on the **Views** tab
+  * Click on the Plus Button ⊕ to create a View
+  * Select `Custom view` under **Visible Fields and Column Order** section
+  * Get the `View ID`! (Required in `.env` file)
+  * Under **HTML Code**, input `<div id="root"></div>`
+  * Save!
+
+Be sure to click **Save** and **Activate App** buttons! 💪
+
 Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://youtu.be/pRtfn-8cf_I) video 📺
 
 <!-- ![Create_App_Demo.gif Kintone_React_Workshop v2.1](https://user-images.githubusercontent.com/30670749/125898739-1bc018ac-1740-40e0-91cc-ab829192d2ea.gif) -->
 
-### 📺 How to Create a Kintone Database App | Video <!-- omit in toc -->
+---
 
-<p align="center">
-  <a href="https://youtu.be/pRtfn-8cf_I">
-    <img height="200" alt="How to Create a Kintone Database App YouTube Thumbnail"
-      src="https://img.youtube.com/vi/pRtfn-8cf_I/hqdefault.jpg">
-  </a>
-</p>
+## Create a `.env` file
+
+Using the [.env.example](.env.example) file as a temple, create a `.env` file that will contain your login credentials and the Kintone App's View ID.
+
+This is what the [.env.example](.env.example) looks like:
+
+```txt
+KINTONE_BASE_URL=
+KINTONE_USERNAME=
+KINTONE_PASSWORD=
+VIEW_ID=
+```
+
+Here is what your `.env` might look like:
+
+```txt
+KINTONE_BASE_URL="https://example.kintone.com"
+KINTONE_USERNAME="example@gmail.com"
+KINTONE_PASSWORD="ILoveKintone!"
+VIEW_ID="1234567"
+```
+
+---
+
+## Input the App ID
+
+The Kintone Customize Uploader uses [customize-manifest.json](customize-manifest.json) to determine where to upload the JavaScript file (_which Kintone App_).
+
+So to ensure the file gets uploaded to the correct App, replace the `10` with your App ID.
+
+```json
+{
+    "app": "10",
+    "scope": "ALL",
+    ...
+```
 
 ---
 
@@ -138,28 +187,26 @@ Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://
 
 1. Build the customization in the following files inside `./src/`
    * `index.html`, `index.js`, `index.css`, etc.
-2. Run `npm run dev` to continuously generate testing build
+2. Run `npm run dev` to generate testing builds continuously
 3. Run `npm run production` to create a production version
-
    * To directly upload the Kintone customization, use `./dist/KintoneCustomization.js`.
    * For more details, refer to [Customizing an App with JavaScript and CSS](https://get.kintone.help/k/en/user/app_settings/js_customize.html)
-
 4. Run `npm run start`
    * This will trigger webpack & kintone-customize-uploader to run while watching `./src/index.js` for changes
    * Input Kintone credentials when asked
 5. Refresh the Kintone App to see the changes!
 
-Good luck coding!
+Good luck coding! ᕙ(⇀‸↼‶)ᕗ
 
 ---
 
 ## Debugging - Let's Fix Those Problems 💪
 
-Here is a rundown of common problems that may occur & its solutions!
+Here is a rundown of common problems & their solutions!
 
 ### Errors related to .env
 
-If you get one of the following error messages, then please verify your `.env` file has been correctly configured and you have not modified the `.env.example`
+If you get one of the following error messages, then please verify your `.env` file has been correctly configured, and you have not modified the `.env.example`
 
   * `Failed to find .env file at default paths: [./.env,./.env.js,./.env.json]`
   * `[webpack-cli] Error: Missing environment variable: KINTONE_BASE_URL`
@@ -179,12 +226,14 @@ If you get one of the following error messages, then please verify your `.env` f
 
 Verify that you are inputting the exact base URL for Kintone credentials questions
 
-  * Correct: `https://example.cybozu.com` ✅
-  * Incorrect: `https://example.cybozu.com/` or `example.cybozu.com` ❌
+  * Correct: `https://example.kintone.com` ✅
+  * Incorrect: `https://example.kintone.com/` or `example.kintone.com` ❌
 
 ### How do I get my Kintone Subdomain?
 
-It might be a bit confusing since you need to sign-up for [Developer Program Account (Website) 🌐](https://bit.ly/KDP_signup) BEFORE creating your [Kintone Subdomain (Database) 📂](http://bit.ly/K_DevLic).
+This may be a bit confusing since order matters.
+
+You need to sign-up for [Developer Program Account (Website) 🌐](https://bit.ly/KDP_signup) **BEFORE** creating your [Kintone Subdomain (Database) 📂](http://bit.ly/K_DevLic).
 
 Check out our [Sign up for Kintone Developer Program & Developer License](https://youtu.be/Gzz8SbTuoFg) YouTube video:
 
@@ -194,10 +243,21 @@ Check out our [Sign up for Kintone Developer Program & Developer License](https:
 
 ## Appendix
 
+### Files
+
 | Files                                               | Purpose                                                                       |
 | --------------------------------------------------- | ----------------------------------------------------------------------------- |
 | [Install_NodeJS_npm.md](docs/Install_NodeJS_npm.md) | Guide on Installing Node.js & npm                                             |
 | [Workshop.md](docs/Workshop.md)                     | Workshop Overview & Notes                                                     |
-| [References.md](docs/References.md)                 | List of all the articles refereed to when building this project               |
+| [References.md](docs/References.md)                 | List of all the articles referred to when building this project               |
 | [Manga_Data.csv](docs/Manga_Data.csv)               | Manga title and author data that can be uploaded to your Kintone Manga DB App |
 | [CustomizeUploader.md](docs/CustomizeUploader.md)   | Guide on configuring the @kintone/customize-uploader                          |
+
+### Branches
+
+| Branches     | Purpose                             | Status                                                                                                |
+| ------------ | ----------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `main`       | Starting point for the workshop     | `src/index.js`, `src/components/SearchBar.js`, & `src/components/ResultList.js` needs to be completed |
+| `workshop`   | _same as the main branch_           | _same as the main branch_                                                                             |
+| `dev`        | Development branch for the KDP team | Pending Improvements                                                                                  |
+| `production` | Stores code ready to be used        | Latest version of the working build                                                                   |

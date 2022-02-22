@@ -90,7 +90,7 @@ Optional: Verify that nodenv is properly set up using [nodenv-doctor](https://gi
 
 Alright! Your Mac is now armed with Node.js!
 
-Download the required packages by going opening a terminal inside the `frontend` folder & `backend` folder & running the `npm install` command!
+Download the required packages by opening a terminal for both the `frontend` & `backend` folders and then running the `npm install` command!
 
 ---
 
@@ -131,7 +131,7 @@ Having different Node.js installations can lead to conflict issues.
 
 Alright! Your Windows is now armed with Node.js!
 
-Download the required packages by going opening a terminal inside the `frontend` folder & `backend` folder & running the `npm install` command!
+Download the required packages by opening a terminal for both the `frontend` & `backend` folders and then running the `npm install` command!
 
 ## 📺 Installing Node.js | Video
 

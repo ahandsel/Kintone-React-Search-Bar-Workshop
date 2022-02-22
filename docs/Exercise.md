@@ -2,7 +2,7 @@
 
 ## Exercises 1: Rewrite this if-else statement as a ternary statement
 
-if-else Statement
+The if-else statement
 
   ```js
   if (listItems.length > 0) {
@@ -23,7 +23,7 @@ if-else Statement
   }
   ```
 
-Ternary Statement
+The ternary statement
 
   ```js
   return (
