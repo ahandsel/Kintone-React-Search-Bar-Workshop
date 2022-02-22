@@ -65,7 +65,7 @@ Some ideas to further build out the project:
 
 ### src/index.js
   * The `handleChange` function takes in the browser-generated event object and the `listItems`.
-  * The user input stored in the event object is used to compare with title field.
+  * The user input stored in the event object is used to compare with the title field.
   * `filter()` accepts a function as a parameter.
     * That function acts as a condition to evaluate each item in the array as true-or-false.
     * `filter()` then returns an array of items passing that condition.

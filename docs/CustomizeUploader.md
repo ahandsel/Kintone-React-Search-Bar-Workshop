@@ -5,7 +5,7 @@
 * [Setting Up for @kintone/customize-uploader](#setting-up-for-kintonecustomize-uploader)
   * [Part A: Update `customize-manifest.json` with your App ID](#part-a-update-customize-manifestjson-with-your-app-id)
     * [`customize-manifest.json` Template](#customize-manifestjson-template)
-  * [Part B: Set your Kintone login credentials in `.env` file](#part-b-set-your-kintone-login-credentials-in-env-file)
+  * [Part B: Set your Kintone login credentials in the `.env` file](#part-b-set-your-kintone-login-credentials-in-the-env-file)
 * [Appendix: Alternative Login Methods](#appendix-alternative-login-methods)
   * [Dialog Style Login Method](#dialog-style-login-method)
   * [Manual Environment Variables Login Method](#manual-environment-variables-login-method)
@@ -16,22 +16,22 @@
 
 ## What is @kintone/customize-uploader ?
 
-The Kintone Customize Uploader is a command line tool for uploading JavaScript and CSS files to Kintone. It allows the user to automatically upload JS and CSS files to a Kintone App when a change is made in the file.
+The Kintone Customize Uploader is a command-line tool for uploading JavaScript and CSS files to Kintone. It allows the user to automatically upload JS and CSS files to a Kintone App when a change is made in the file.
 
 The tool is published on npm and is available for Windows, macOS, and Linux.
   * ⚠️ Node.js version 6 or later is needed to use this tool.
 
-For more information on the Kintone Customize Uploader tool, refer to [Introduction to customize-uploader](https://developer.kintone.io/hc/en-us/articles/360017405154) article.
+For more information on the Kintone Customize Uploader tool, refer to the [Introduction to customize-uploader](https://developer.kintone.io/hc/en-us/articles/360017405154) article.
 
 To view the source code, refer to [js-sdk/packages/customize-uploader at master · kintone/js-sdk](https://github.com/kintone/js-sdk/tree/master/packages/customize-uploader).
 
 ## Setting Up for @kintone/customize-uploader
 1. Update `customize-manifest.json` with App ID
-2. Set your Kintone login credentials in `.env` file
+2. Set your Kintone login credentials in the `.env` file
 
 ### Part A: Update `customize-manifest.json` with your App ID
 1. Determine the App ID of the Kintone App you want to upload the customizations to.
-2. Replace the `180` value for `"app"` key in the template below with the App ID.
+2. Replace the `180` value for the `"app"` key in the template below with the App ID.
 
 **What is my App ID?**
 To determine your Kintone App ID:
@@ -58,7 +58,7 @@ Example: `https://YOUR_SUBDOMAIN.kintone.com/k/1/` -> App ID is `1`
 }
 ```
 
-### Part B: Set your Kintone login credentials in `.env` file
+### Part B: Set your Kintone login credentials in the `.env` file
 
 By far, the simplest way to input your Kintone login credentials for the Kintone Customize Uploader is the `.env` & [env-cmd](https://www.npmjs.com/package/env-cmd) method.
 
@@ -84,16 +84,16 @@ VIEW_ID=1234567
 ```
 
 ⚠️ Caution:
-  * Make sure to still keep `.env.example` file as it is used by env-cmd to verify the environmental variable configuration.
+  * Make sure to keep the `.env.example` file since it is used by env-cmd to verify the environmental variable configuration.
 
 ## Appendix: Alternative Login Methods
 
-Following two are alternative to input your Kintone login credentials for the Kintone Customize Uploader:
+The following two are alternative methods to input your Kintone login credentials for the Kintone Customize Uploader:
 1. [Dialog Style Login Method](#dialog-style-login-method)
 2. [Manual Environment Variables Login Method](#manual-environment-variables-login-method)
 
 ### Dialog Style Login Method
-Executing only the `npm run start` command will prompt a interactive login dialog. Input the Kintone subdomain, username, and password individually.
+Executing only the `npm run start` command will prompt an interactive login dialog. Input the Kintone subdomain, username, and password individually.
 
 Login dialog:  
 
@@ -109,7 +109,7 @@ Example:
   * ? Input your password: [input is hidden] `KintoneIsAmazing!`
 
 Success Message:  
-*If you see the following message, you logged successfully!*
+*If you see the following message, you logged in successfully!*
 
 ```text
 Generate customize-manifest.json from kintone app customize
@@ -136,7 +136,7 @@ Verify that the environment variables were set correctly:
    # View all the environment variables
    $env:path -split ";"
 
-   # View environment variables in current directory
+   # View environment variables in the current directory
    Get-Item .
   ```
 

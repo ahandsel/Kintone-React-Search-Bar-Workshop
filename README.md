@@ -104,7 +104,7 @@ _Built for teamwork, designed by you_ <!-- markdownlint-disable MD036 --> <!-- m
 
   * [bit.ly/K_DevLic](http://bit.ly/K_DevLic)
     * ⚡ Only use lowercase, numbers, & hyphens in your subdomain
-    * ⚠ Do not use uppercase nor special characters
+    * ⚠ Do not use uppercase or special characters
 
 #### 📺 Sign up for Kintone Developer Program & Developer License | Video <!-- omit in toc -->
 
@@ -129,7 +129,7 @@ Here are the required fields & their configurations for our workshop:
 | Text       | Author     | `author`   | The manga's author |
 
 Then create a Custom View
-  * From App Settings, click on **Views** tab
+  * From App Settings, click on the **Views** tab
   * Click on the Plus Button ⊕ to create a View
   * Select `Custom view` under **Visible Fields and Column Order** section
   * Get the `View ID`! (Required in `.env` file)
@@ -146,7 +146,7 @@ Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://
 
 ## Create a `.env` file
 
-Using [.env.example](.env.example) file as a temple, create a `.env` file that will contain your login credentials and the Kintone App's View ID.
+Using the [.env.example](.env.example) file as a temple, create a `.env` file that will contain your login credentials and the Kintone App's View ID.
 
 This is what the [.env.example](.env.example) looks like:
 
@@ -170,7 +170,7 @@ VIEW_ID="1234567"
 
 ## Input the App ID
 
-The Kintone Customize Uploader uses [customize-manifest.json](customize-manifest.json) to determine which of your Kintone Apps to upload the JavaScript file to.
+The Kintone Customize Uploader uses [customize-manifest.json](customize-manifest.json) to determine where to upload the JavaScript file (_which Kintone App_).
 
 So to ensure the file gets uploaded to the correct App, replace the `10` with your App ID.
 
@@ -187,7 +187,7 @@ So to ensure the file gets uploaded to the correct App, replace the `10` with yo
 
 1. Build the customization in the following files inside `./src/`
    * `index.html`, `index.js`, `index.css`, etc.
-2. Run `npm run dev` to continuously generate testing build
+2. Run `npm run dev` to generate testing builds continuously
 3. Run `npm run production` to create a production version
    * To directly upload the Kintone customization, use `./dist/KintoneCustomization.js`.
    * For more details, refer to [Customizing an App with JavaScript and CSS](https://get.kintone.help/k/en/user/app_settings/js_customize.html)
@@ -202,11 +202,11 @@ Good luck coding! ᕙ(⇀‸↼‶)ᕗ
 
 ## Debugging - Let's Fix Those Problems 💪
 
-Here is a rundown of common problems that may occur & its solutions!
+Here is a rundown of common problems & their solutions!
 
 ### Errors related to .env
 
-If you get one of the following error messages, then please verify your `.env` file has been correctly configured and you have not modified the `.env.example`
+If you get one of the following error messages, then please verify your `.env` file has been correctly configured, and you have not modified the `.env.example`
 
   * `Failed to find .env file at default paths: [./.env,./.env.js,./.env.json]`
   * `[webpack-cli] Error: Missing environment variable: KINTONE_BASE_URL`
@@ -249,7 +249,7 @@ Check out our [Sign up for Kintone Developer Program & Developer License](https:
 | --------------------------------------------------- | ----------------------------------------------------------------------------- |
 | [Install_NodeJS_npm.md](docs/Install_NodeJS_npm.md) | Guide on Installing Node.js & npm                                             |
 | [Workshop.md](docs/Workshop.md)                     | Workshop Overview & Notes                                                     |
-| [References.md](docs/References.md)                 | List of all the articles refereed to when building this project               |
+| [References.md](docs/References.md)                 | List of all the articles referred to when building this project               |
 | [Manga_Data.csv](docs/Manga_Data.csv)               | Manga title and author data that can be uploaded to your Kintone Manga DB App |
 | [CustomizeUploader.md](docs/CustomizeUploader.md)   | Guide on configuring the @kintone/customize-uploader                          |
 
@@ -258,6 +258,6 @@ Check out our [Sign up for Kintone Developer Program & Developer License](https:
 | Branches     | Purpose                             | Status                                                                                                |
 | ------------ | ----------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | `main`       | Starting point for the workshop     | `src/index.js`, `src/components/SearchBar.js`, & `src/components/ResultList.js` needs to be completed |
-| `workshop`   | _same as main branch_               | _same as main branch_                                                                                 |
+| `workshop`   | _same as the main branch_           | _same as the main branch_                                                                             |
 | `dev`        | Development branch for the KDP team | Pending Improvements                                                                                  |
-| `production` | Stores the production ready code    | Latest version of the working build                                                                   |
+| `production` | Stores code ready to be used        | Latest version of the working build                                                                   |
