@@ -71,7 +71,21 @@ Some ideas to further build out the project:
     * `filter()` then returns an array of items passing that condition.
   * Conclude by setting `setSearchResults(filterResults)`
 
-  ```js
+Incomplete Version
+
+  ```jsx
+  const handleChange = e => { // e is a typical way to name the browser-generated event object
+    let filterResults;
+
+    console.log('filterResults: \n', filterResults);
+
+    setSearchResults(filterResults);
+  };
+  ```
+
+Completed Version
+
+  ```jsx
   const handleChange = e => { // e is a typical way to name the browser-generated event object
     let filterResults = listItems.filter(record =>
       record.title.toLowerCase().includes(e.target.value.toLowerCase()) // filter condition
@@ -88,9 +102,22 @@ Some ideas to further build out the project:
   * `className='SearchBar'`
   * `onChange={props.handleChange}`
 
+Incomplete Version
+
   ```jsx
   className=''
   ...
+  onChange={props.handleChange}
+  ```
+
+Completed Version
+
+  ```jsx
+  className='SearchBar'
+  type='text'
+  id='header-search'
+  placeholder='Search Manga Titles'
+  name='Search Bar for Manga Titles'
   onChange={props.handleChange}
   ```
 
@@ -99,16 +126,34 @@ Some ideas to further build out the project:
   * `{props.searchResults.map(function (resultRecord) {})}`
   * Inside we would return JSX: return `<li key={resultRecord.uniqueKey}>{resultRecord.title} written by {resultRecord.author}</li>`
 
+Incomplete Version
+
   ```jsx
-  <div className='ResultList'>
-    <ul>
-      {props.searchResults.map(function (resultRecord) {
-        return (
-          <li key={resultRecord.uniqueKey}>
-            {resultRecord.title} written by {resultRecord.author}
-          </li>
-        )
-      })}
-    </ul>
-  </div>
+  export default function ResultList(props) {
+    return (
+      <div className='ResultList'>
+
+      </div>
+    );
+  };
+  ```
+
+Completed Version
+
+  ```jsx
+  export default function ResultList(props) {
+    return (
+      <div className='ResultList'>
+        <ul>
+          {props.searchResults.map(function (resultRecord) {
+            return (
+              <li key={resultRecord.uniqueKey}>
+                {resultRecord.title} written by {resultRecord.author}
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    );
+  };
   ```
