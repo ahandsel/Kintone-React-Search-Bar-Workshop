@@ -39,7 +39,7 @@ Once you are inside the folder, let's install the dependencies!
 ```shell
 cd Downloads
 
-git clone -b workshop https://github.com/ahandsel/Kintone_React_Search_Bar
+git clone https://github.com/ahandsel/Kintone_React_Search_Bar
 
 cd Kintone_React_Search_Bar
 
