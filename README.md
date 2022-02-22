@@ -21,6 +21,8 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
   * [@kintone/customize-uploader not working?](#kintonecustomize-uploader-not-working)
   * [How do I get my Kintone Subdomain?](#how-do-i-get-my-kintone-subdomain)
 * [Appendix](#appendix)
+  * [Files](#files)
+  * [Branches](#branches)
 
 <!-- markdownlint-enable MD007 -->
 
@@ -241,6 +243,8 @@ Check out our [Sign up for Kintone Developer Program & Developer License](https:
 
 ## Appendix
 
+### Files
+
 | Files                                               | Purpose                                                                       |
 | --------------------------------------------------- | ----------------------------------------------------------------------------- |
 | [Install_NodeJS_npm.md](docs/Install_NodeJS_npm.md) | Guide on Installing Node.js & npm                                             |
@@ -248,3 +252,12 @@ Check out our [Sign up for Kintone Developer Program & Developer License](https:
 | [References.md](docs/References.md)                 | List of all the articles refereed to when building this project               |
 | [Manga_Data.csv](docs/Manga_Data.csv)               | Manga title and author data that can be uploaded to your Kintone Manga DB App |
 | [CustomizeUploader.md](docs/CustomizeUploader.md)   | Guide on configuring the @kintone/customize-uploader                          |
+
+### Branches
+
+| Branches     | Purpose                             | Status                                                                                                |
+| ------------ | ----------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `main`       | Starting point for the workshop     | `src/index.js`, `src/components/SearchBar.js`, & `src/components/ResultList.js` needs to be completed |
+| `workshop`   | _same as main branch_               | _same as main branch_                                                                                 |
+| `dev`        | Development branch for the KDP team | Pending Improvements                                                                                  |
+| `production` | Stores the production ready code    | Latest version of the working build                                                                   |
