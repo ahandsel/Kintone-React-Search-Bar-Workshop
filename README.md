@@ -172,14 +172,20 @@ VIEW_ID="1234567"
 
 The Kintone Customize Uploader uses [customize-manifest.json](customize-manifest.json) to determine where to upload the JavaScript file (_which Kintone App_).
 
-So to ensure the file gets uploaded to the correct App, replace the `10` with your App ID.
-
 ```json
 {
     "app": "10",
     "scope": "ALL",
     ...
 ```
+
+So to ensure the file gets uploaded to the correct App, replace the `10` with your App ID.
+
+**What is my App ID?** 🤔  
+  * Go to your Kintone App & grab the URL
+  * Kintone App's URL follows this template: `https://<SUBDOMAIN>.kintone.com/k/<App ID>/show#record=<RECORD ID>`
+  * Grab the number between the `/k/`
+  * Example: `https://example.kintone.com/k/1/` -> The App's ID is `1`
 
 ---
 
