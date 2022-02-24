@@ -18,12 +18,12 @@ export default function SearchBar(props) {
           <span className='visually-hidden'>Search Manga Titles</span>
         </label>
         <input
-          className=''
+          className='SearchBar'
           type='text'
           id='header-search'
           placeholder='Search Manga Titles'
           name='Search Bar for Manga Titles'
-          onChange={}
+          onChange={props.handleChange}
         />
         <button className="SearchButton" type='button'><SearchIcon /></button>
       </form>
