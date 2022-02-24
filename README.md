@@ -19,7 +19,9 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
   * [Errors related to .env](#errors-related-to-env)
   * [`npm install` command is not working](#npm-install-command-is-not-working)
   * [@kintone/customize-uploader not working?](#kintonecustomize-uploader-not-working)
-  * [How do I get my Kintone Subdomain?](#how-do-i-get-my-kintone-subdomain)
+  * [Errors related to Kintone Subdomain](#errors-related-to-kintone-subdomain)
+    * [How do I get my Kintone Subdomain?](#how-do-i-get-my-kintone-subdomain)
+    * [How do I log into my Kintone account?](#how-do-i-log-into-my-kintone-account)
 * [Appendix](#appendix)
   * [Files](#files)
   * [Branches](#branches)
@@ -166,6 +168,9 @@ KINTONE_PASSWORD="ILoveKintone!"
 VIEW_ID="1234567"
 ```
 
+⚠️ DO NOT EDIT NOR DELETE THE [.env.example](.env.example) FILE!  
+[.env.example](.env.example) is used by env-cmd to verify that `.env` file is correctly configured.
+
 ---
 
 ## Input the App ID
@@ -212,13 +217,20 @@ Here is a rundown of common problems & their solutions!
 
 ### Errors related to .env
 
-If you get one of the following error messages, then please verify your `.env` file has been correctly configured, and you have not modified the `.env.example`
+Are you getting one of the following error messages?
+If you get one of the following error messages, then please verify , and you have not modified the `.env.example`
 
   * `Failed to find .env file at default paths: [./.env,./.env.js,./.env.json]`
   * `[webpack-cli] Error: Missing environment variable: KINTONE_BASE_URL`
   * `[webpack-cli] Error: Missing environment variable: KINTONE_USERNAME`
   * `[webpack-cli] Error: Missing environment variable: KINTONE_PASSWORD`
   * `[webpack-cli] Error: Missing environment variable: VIEW_ID`
+
+**Then** please do the following:
+  1. Verify your `.env` file has been correctly configured! [Details](#create-a-env-file)
+  2. Make sure you did NOT change the `.env.example` file!
+     * It should still be in your project folder
+     * It should NOT contain your login information
 
 ### `npm install` command is not working
 
@@ -235,15 +247,31 @@ Verify that you are inputting the exact base URL for Kintone credentials questio
   * Correct: `https://example.kintone.com` ✅
   * Incorrect: `https://example.kintone.com/` or `example.kintone.com` ❌
 
-### How do I get my Kintone Subdomain?
+### Errors related to Kintone Subdomain
 
-This may be a bit confusing since order matters.
+#### How do I get my Kintone Subdomain?
 
+This may be a bit confusing since the **order** matters.  
 You need to sign-up for [Developer Program Account (Website) 🌐](https://bit.ly/KDP_signup) **BEFORE** creating your [Kintone Subdomain (Database) 📂](http://bit.ly/K_DevLic).
 
 Check out our [Sign up for Kintone Developer Program & Developer License](https://youtu.be/Gzz8SbTuoFg) YouTube video:
-
   * [![https://youtu.be/Gzz8SbTuoFg](https://img.youtube.com/vi/Gzz8SbTuoFg/mq1.jpg)](https://youtu.be/Gzz8SbTuoFg)
+
+#### How do I log into my Kintone account?
+
+You need three things to log into your Kintone account:
+1. Subdomain - Unique alphanumerica & underscore text that you filled out when creating your [Kintone Subdomain (Database) 📂](http://bit.ly/K_DevLic).
+2. Username (Login Name) - By default, it is your email address
+3. Password - The password you set after activiating your Kintone Developer License
+
+Your Kintone **Subdomain** determines the URL used to access your Kintone account
+  * Kintone's URL follows this template: `https://<SUBDOMAIN>.kintone.com/`
+  * Example: The `devevents` subdomain leads to `https://devevents.kintone.com/`
+
+##### Having Trouble Logging In?
+  * ⚠️ Make sure your password is correct (surprisingly a common problem)
+  * You can always reset the the password by clicking on the **Having Trouble Logging In?** link on the login page
+    * Input your email & reset the password
 
 ---
 
