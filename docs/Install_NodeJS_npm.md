@@ -1,12 +1,10 @@
 # Guide on Installing Node.js & npm
 
-## Outline <!-- omit in toc --> <!-- markdownlint-disable MD007 -->
+## Outline <!-- omit in toc -->
 * [Check if you already have Node.js or npm](#check-if-you-already-have-nodejs-or-npm)
 * [macOS with nodenv](#macos-with-nodenv)
 * [Windows with nvm-windows](#windows-with-nvm-windows)
 * [📺 Installing Node.js | Video](#-installing-nodejs--video)
-
-<!-- markdownlint-enable MD007 -->
 
 ## Check if you already have Node.js or npm
 
@@ -22,10 +20,12 @@ If Node & npm are missing, let's install them!
 
 **Options**:
 
-  * [macOS with nodenv](#macos-with-nodenv)
-  * [Windows with nvm-windows](#windows-with-nvm-windows)
+* [Check if you already have Node.js or npm](#check-if-you-already-have-nodejs-or-npm)
+* [macOS with nodenv](#macos-with-nodenv)
+* [Windows with nvm-windows](#windows-with-nvm-windows)
+* [📺 Installing Node.js | Video](#-installing-nodejs--video)
 
-## macOS with [nodenv](https://github.com/nodenv/nodenv)
+## macOS with nodenv
 
 We recommend installing Node.js using [nodenv](https://github.com/nodenv/nodenv) to manage node versions. This allows your computer to have a specific Node.js version per project.
 
@@ -57,13 +57,13 @@ Close & open a new Terminal window for the changes to take place.
 
 Optional: Verify that nodenv is properly set up using [nodenv-doctor](https://github.com/nodenv/nodenv-installer/blob/master/bin/nodenv-doctor) script.
 
-  * For those using Z shell (Zsh) shell:
+* For those using Z shell (Zsh) shell:
 
     ```shell
     curl -fsSL https://github.com/nodenv/nodenv-installer/raw/master/bin/nodenv-doctor | bash
     ```
 
-  * Expected result:
+* Expected result:
 
     ```shell
     Checking for `nodenv' in PATH: /usr/local/bin/nodenv
@@ -77,8 +77,8 @@ Optional: Verify that nodenv is properly set up using [nodenv-doctor](https://gi
 
 **Step 4**: Install Node.js inside the React Workshop folder (`React_Workshop_by_Kintone`)
 
-  * Now you're ready to install specific Node.js versions!
-  * **Inside** `React_Workshop_by_Kintone` folder, install Node.js version `14.5.0`:
+* Now you're ready to install specific Node.js versions!
+* **Inside** `React_Workshop_by_Kintone` folder, install Node.js version `14.5.0`:
 
   ```shell
   cd React_Workshop_by_Kintone/
@@ -109,17 +109,17 @@ Having different Node.js installations can lead to conflict issues.
 
 **Step 4**: The Setup-NVM-for-Windows installation wizard will walk you through the setup steps, including choosing the directory where both nvm-windows and Node.js will be installed.
 
-  * ![install-nvm-for-windows-wizard.png](https://github.com/ahandsel/img/blob/master/Node_Install/install-nvm-for-windows-wizard.png?raw=true)
+* ![install-nvm-for-windows-wizard.png](https://github.com/ahandsel/img/blob/master/Node_Install/install-nvm-for-windows-wizard.png?raw=true)
 
 **Step 5**: After the installation is complete, open PowerShell & enter `nvm ls`
 
-  * `nvm ls` lists out installed Node versions (should be none at this point)
-  * ![windows-nvm-powershell-no-node.png](https://github.com/ahandsel/img/blob/master/Node_Install/windows-nvm-powershell-no-node.png?raw=true)
+* `nvm ls` lists out installed Node versions (should be none at this point)
+* ![windows-nvm-powershell-no-node.png](https://github.com/ahandsel/img/blob/master/Node_Install/windows-nvm-powershell-no-node.png?raw=true)
 
 **Step 6**: Install Node.js inside the React Workshop folder (`React_Workshop_by_Kintone`)
 
-  * Now you're ready to install specific Node.js versions!
-  * Inside `React_Workshop_by_Kintone` folder, install Node.js version `14.5.0`:
+* Now you're ready to install specific Node.js versions!
+* Inside `React_Workshop_by_Kintone` folder, install Node.js version `14.5.0`:
 
   ```powershell
   cd .\Documents\React_Workshop_by_Kintone

@@ -3,7 +3,7 @@
 Thank you for attending our **Kintone x React** workshop!  
 Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Developers/) to check out all of our upcoming events!
 
-## Outline <!-- omit in toc --> <!-- markdownlint-disable MD007 -->
+## Outline <!-- omit in toc -->
 
 * [Demo of Build](#demo-of-build)
 * [Get Started](#get-started)
@@ -26,8 +26,6 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 * [Appendix](#appendix)
   * [Files](#files)
   * [Branches](#branches)
-
-<!-- markdownlint-enable MD007 -->
 
 ## Demo of Build
 
@@ -55,10 +53,10 @@ npm install -g @kintone/customize-uploader
 
 ⚡ React requires **Node ≥ 10.16** & **npm ≥ 5.6** ⚡
 
-  * Check the versions inside the `React_Workshop_by_Kintone` folder:
-    * `node -v`
-    * `npm -v`
-  * Not the correct versions or Confused? 🤔 → Check out the [Guide on Installing Node.js & npm](docs/Install_NodeJS_npm.md) Doc
+* Check the versions inside the `React_Workshop_by_Kintone` folder:
+  * `node -v`
+  * `npm -v`
+* Not the correct versions or Confused? 🤔 → Check out the [Guide on Installing Node.js & npm](docs/Install_NodeJS_npm.md) Doc
 
 ⚡ Note: Please ignore the package deprecation warnings ⚡
 
@@ -98,16 +96,16 @@ _Built for teamwork, designed by you_ <!-- markdownlint-disable MD036 --> <!-- m
 
 #### ① Sign-Up for Developer Program Account (Website) 🌐 <!-- omit in toc -->
 
-  * [bit.ly/KDP_signup](https://bit.ly/KDP_signup)
-    * ⚠ Do NOT use Safari
-    * ⚡ Accept Cookies First
-    * ✅ Use Chrome & Firefox
+* [bit.ly/KDP_signup](https://bit.ly/KDP_signup)
+  * ⚠ Do NOT use Safari
+  * ⚡ Accept Cookies First
+  * ✅ Use Chrome & Firefox
 
 #### ② THEN Create a Kintone Subdomain (Database) 📂 <!-- omit in toc -->
 
-  * [bit.ly/K_DevLic](http://bit.ly/K_DevLic)
-    * ⚡ Only use lowercase, numbers, & hyphens in your subdomain
-    * ⚠ Do not use uppercase or special characters
+* [bit.ly/K_DevLic](http://bit.ly/K_DevLic)
+  * ⚡ Only use lowercase, numbers, & hyphens in your subdomain
+  * ⚠ Do not use uppercase or special characters
 
 #### 📺 Sign up for Kintone Developer Program & Developer License | Video <!-- omit in toc -->
 
@@ -132,12 +130,12 @@ Here are the required fields & their configurations for our workshop:
 | Text       | Author     | `author`   | The manga's author |
 
 Then create a Custom View
-  * From App Settings, click on the **Views** tab
-  * Click on the Plus Button ⊕ to create a View
-  * Select `Custom view` under **Visible Fields and Column Order** section
-  * Get the `View ID`! (Required in `.env` file)
-  * Under **HTML Code**, input `<div id="root"></div>`
-  * Save!
+* From App Settings, click on the **Views** tab
+* Click on the Plus Button ⊕ to create a View
+* Select `Custom view` under **Visible Fields and Column Order** section
+* Get the `View ID`! (Required in `.env` file)
+* Under **HTML Code**, input `<div id="root"></div>`
+* Save!
 
 Be sure to click **Save** and **Activate App** buttons! 💪
 
@@ -188,10 +186,10 @@ The Kintone Customize Uploader uses [customize-manifest.json](customize-manifest
 So to ensure the file gets uploaded to the correct App, replace the `10` with your App ID.
 
 **What is my App ID?** 🤔  
-  * Go to your Kintone App & grab the URL
-  * Kintone App's URL follows this template: `https://<SUBDOMAIN>.kintone.com/k/<App ID>/show#record=<RECORD ID>`
-  * Grab the number between the `/k/`
-  * Example: `https://example.kintone.com/k/1/` -> The App's ID is `1`
+* Go to your Kintone App & grab the URL
+* Kintone App's URL follows this template: `https://<SUBDOMAIN>.kintone.com/k/<App ID>/show#record=<RECORD ID>`
+* Grab the number between the `/k/`
+* Example: `https://example.kintone.com/k/1/` -> The App's ID is `1`
 
 ---
 
@@ -221,11 +219,11 @@ Here is a rundown of common problems & their solutions!
 Are you getting one of the following error messages?
 If you get one of the following error messages, then please verify , and you have not modified the `.env.example`
 
-  * `Failed to find .env file at default paths: [./.env,./.env.js,./.env.json]`
-  * `[webpack-cli] Error: Missing environment variable: KINTONE_BASE_URL`
-  * `[webpack-cli] Error: Missing environment variable: KINTONE_USERNAME`
-  * `[webpack-cli] Error: Missing environment variable: KINTONE_PASSWORD`
-  * `[webpack-cli] Error: Missing environment variable: VIEW_ID`
+* `Failed to find .env file at default paths: [./.env,./.env.js,./.env.json]`
+* `[webpack-cli] Error: Missing environment variable: KINTONE_BASE_URL`
+* `[webpack-cli] Error: Missing environment variable: KINTONE_USERNAME`
+* `[webpack-cli] Error: Missing environment variable: KINTONE_PASSWORD`
+* `[webpack-cli] Error: Missing environment variable: VIEW_ID`
 
 **Then** please do the following:
   1. Verify your `.env` file has been correctly configured! [Details](#create-a-env-file)
@@ -238,25 +236,25 @@ If you get one of the following error messages, then please verify , and you hav
 1. Verify the Node.js & npm versions **inside** the `Kintone_React_Search_Bar` folder
 2. Just installed Node.js? Verify you configured Node.js versions **inside** the `Kintone_React_Search_Bar` folder
 
-  * Mac: `nodenv local 14.5.0`
-  * Windows: `nvm use 14.5.0`
+* Mac: `nodenv local 14.5.0`
+* Windows: `nvm use 14.5.0`
 
 ### "npm run upload" failed?
 _@kintone/customize-uploader not working?_ Lets try the following:
 
 (1) Verify that customize uploader was installed globally
-  * `npm install -g @kintone/customize-uploader`
+* `npm install -g @kintone/customize-uploader`
 
 (2) Verify that the .env login info is correct (including the password)
-  * ⚠️ Make sure your login info is inside `.env` file & **NOT** `.env.example` file!
-  * ⚠️ Verify that KINTONE_BASE_URL input is correctly formatted:
-    * ✅ Correct Format: `https://example.kintone.com`
-    * ❌ Incorrect Format: `https://example.kintone.com/` or `example.kintone.com`
-  * ⚠️ Re-run the npm commands after saving the .env file
-  * ⚙️ Details: [Create a `.env` file](#create-a-env-file)
+* ⚠️ Make sure your login info is inside `.env` file & **NOT** `.env.example` file!
+* ⚠️ Verify that KINTONE_BASE_URL input is correctly formatted:
+  * ✅ Correct Format: `https://example.kintone.com`
+  * ❌ Incorrect Format: `https://example.kintone.com/` or `example.kintone.com`
+* ⚠️ Re-run the npm commands after saving the .env file
+* ⚙️ Details: [Create a `.env` file](#create-a-env-file)
 
 (3) Verify your customize-manifest.json was updated with the correct App ID
-  * ⚙️ Details: [Input the App ID](#input-the-app-id)
+* ⚙️ Details: [Input the App ID](#input-the-app-id)
 
 ### Uncaught Error: Target container is not a DOM element
 Verify that the Custom View (Search Bar View) has the following HTML Code:
@@ -273,7 +271,7 @@ This may be a bit confusing since the **order** matters.
 You need to sign-up for [Developer Program Account (Website) 🌐](https://bit.ly/KDP_signup) **BEFORE** creating your [Kintone Subdomain (Database) 📂](http://bit.ly/K_DevLic).
 
 Check out our [Sign up for Kintone Developer Program & Developer License](https://youtu.be/Gzz8SbTuoFg) YouTube video:
-  * [![https://youtu.be/Gzz8SbTuoFg](https://img.youtube.com/vi/Gzz8SbTuoFg/mq1.jpg)](https://youtu.be/Gzz8SbTuoFg)
+* [![https://youtu.be/Gzz8SbTuoFg](https://img.youtube.com/vi/Gzz8SbTuoFg/mq1.jpg)](https://youtu.be/Gzz8SbTuoFg)
 
 #### How do I log into my Kintone account?
 
@@ -283,13 +281,13 @@ You need three things to log into your Kintone account:
 3. Password - The password you set after activiating your Kintone Developer License
 
 Your Kintone **Subdomain** determines the URL used to access your Kintone account
-  * Kintone's URL follows this template: `https://<SUBDOMAIN>.kintone.com/`
-  * Example: The `devevents` subdomain leads to `https://devevents.kintone.com/`
+* Kintone's URL follows this template: `https://<SUBDOMAIN>.kintone.com/`
+* Example: The `devevents` subdomain leads to `https://devevents.kintone.com/`
 
 ##### Having Trouble Logging In?
-  * ⚠️ Make sure your password is correct (surprisingly a common problem)
-  * You can always reset the the password by clicking on the **Having Trouble Logging In?** link on the login page
-    * Input your email & reset the password
+* ⚠️ Make sure your password is correct (surprisingly a common problem)
+* You can always reset the the password by clicking on the **Having Trouble Logging In?** link on the login page
+  * Input your email & reset the password
 
 ---
 
