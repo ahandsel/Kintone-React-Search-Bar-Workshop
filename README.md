@@ -9,7 +9,7 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 * [Get Started](#get-started)
   * [⚡ Notes ⚡](#-notes-)
 * [Overview of the Repo](#overview-of-the-repo)
-* [Kintone Web Database & Credentials](#kintone-web-database--credentials)
+* [Kintone Web Database \& Credentials](#kintone-web-database--credentials)
   * [🚀 Getting your FREE Kintone Database](#-getting-your-free-kintone-database)
 * [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
 * [Create a `.env` file](#create-a-env-file)
@@ -276,13 +276,13 @@ Check out our [Sign up for Kintone Developer Program & Developer License](https:
 #### How do I log into my Kintone account?
 
 You need three things to log into your Kintone account:
-1. Subdomain - Unique alphanumerica & underscore text that you filled out when creating your [Kintone Subdomain (Database) 📂](http://bit.ly/K_DevLic).
+1. Subdomain - Unique alphanumeric & underscore text that you filled out when creating your [Kintone Subdomain (Database) 📂](http://bit.ly/K_DevLic).
 2. Username (Login Name) - By default, it is your email address
-3. Password - The password you set after activiating your Kintone Developer License
+3. Password - The password you set after activating your Kintone Developer License
 
 Your Kintone **Subdomain** determines the URL used to access your Kintone account
 * Kintone's URL follows this template: `https://<SUBDOMAIN>.kintone.com/`
-* Example: The `devevents` subdomain leads to `https://devevents.kintone.com/`
+* Example: The `example` subdomain leads to `https://example.kintone.com/`
 
 ##### Having Trouble Logging In?
 * ⚠️ Make sure your password is correct (surprisingly a common problem)
